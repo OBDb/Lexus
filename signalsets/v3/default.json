@@ -120,15 +120,15 @@
   "signals": [
     {"id": "LEXUS_TF2_CONV", "path": "Engine", "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125, "add": -40, "unit": "fahrenheit" }, "name": "Transmission Fluid Post-Converter Temperature"}
   ]},
-{ "hdr": "745", "rax": "74D", "fcm1": true, "dbg": true, "cmd": {"22": "1739"}, "freq": 1,
+{ "hdr": "745", "fcm1": true, "dbg": true, "cmd": {"22": "1739"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_HVBAT_SOC_DISPLAY", "path": "Battery", "fmt": { "len": 8, "max": 100, "unit": "percent" }, "name": "HV battery charge (displayed)", "suggestedMetric": "stateOfCharge"}
   ]},
-{ "hdr": "747", "rax": "74F", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
+{ "hdr": "747", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LEXUS_ODO_V4", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V6", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "747", "rax": "74F", "fcm1": true, "dbg": true, "cmd": {"22": "182E"}, "freq": 1,
+{ "hdr": "747", "fcm1": true, "dbg": true, "cmd": {"22": "182E"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_HVBAT_CMU01_VOLT", "path": "Battery.Modules.01", "fmt": {           "len": 16, "max": 5, "div": 13107, "unit": "volts" }, "name": "HV battery module 01 voltage"},
     {"id": "LEXUS_HVBAT_CMU02_VOLT", "path": "Battery.Modules.02", "fmt": {"bix": 16, "len": 16, "max": 5, "div": 13107, "unit": "volts" }, "name": "HV battery module 02 voltage"}
@@ -262,18 +262,18 @@
         }}
     }
   ]},
-{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F5B"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
-  ]},
-{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
+{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
   "signals": [
     {"id": "LEXUS_HVBAT_SOC_MAX", "path": "Battery", "fmt": {"bix": 8,  "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (max)"},
     {"id": "LEXUS_HVBAT_SOC_MIN", "path": "Battery", "fmt": {"bix": 16, "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (min)"}
   ]},
-{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "1F0D"}, "freq": 0.25,
+{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F0D"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_VSS_V3", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "LEXUS_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+  ]},
+{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F5B"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "21"}, "freq": 1,
   "signals": [
