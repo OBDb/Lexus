@@ -198,7 +198,7 @@
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_BAT_VOLTAGE_V2", "path": "Battery", "fmt": { "len": 16, "max": 79, "mul": 12.207, "div": 10000, "unit": "volts" }, "name": "Battery voltage"}
+    {"id": "LEXUS_BAT_VOLTAGE", "path": "Battery", "fmt": { "len": 16, "max": 79, "mul": 12.207, "div": 10000, "unit": "volts" }, "name": "Battery voltage"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1018"}, "freq": 1,
   "signals": [
@@ -414,7 +414,7 @@
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1621"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_GEAR_V2_V3", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+    {"id": "LEXUS_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1622"}, "freq": 1,
   "signals": [
@@ -881,37 +881,37 @@
     {"id": "LEXUS_ACCUMULATOR_OPEN",                 "path": "Engine",      "fmt": {"bix": 16, "len": 1, "max": 1, "unit": "offon" }, "name": "Accumulator open"},
     {"id": "LEXUS_HV_COMMUNICATION_OPEN",            "path": "Engine",      "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "offon" }, "name": "HV communication open"}
   ]},
-{ "hdr": "7B1", "dbg": true, "cmd": {"22": "1026"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_COUPLING_TEMP", "path": "Drivetrain", "fmt": { "len": 16, "max": 100, "min": -20, "div": 128, "unit": "celsius" }, "name": "Coupling temperature"}
-  ]},
-{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "0103"}, "freq": 1,
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "0103"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_4WD_ODO", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, 4WD"}
   ]},
-{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "1003"}, "freq": 0.25,
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "1003"}, "freq": 0.25,
   "signals": [
     {"id": "LEXUS_FR_WHEEL_VSS_V2", "path": "Movement", "fmt": {           "len": 8, "max": 326, "mul": 326, "div": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
     {"id": "LEXUS_FL_WHEEL_VSS_V2", "path": "Movement", "fmt": {"bix": 8,  "len": 8, "max": 326, "mul": 326, "div": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
     {"id": "LEXUS_RR_WHEEL_VSS_V2", "path": "Movement", "fmt": {"bix": 16, "len": 8, "max": 326, "mul": 326, "div": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "LEXUS_RL_WHEEL_VSS_V2", "path": "Movement", "fmt": {"bix": 24, "len": 8, "max": 326, "mul": 326, "div": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
-{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "1009"}, "freq": 1,
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "1009"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_REAL_ENGINE_TORQUE", "path": "Engine", "fmt": {"bix": 32, "len": 16, "max": 1023,   "min": -1024,   "mul": 312.5, "div": 10000,                 "sign": true, "unit": "newtonMeters" }, "name": "Real engine torque"},
-    {"id": "LEXUS_STEERING_ANGLE_V3",  "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10,    "add": -3276.8,               "unit": "degrees"      }, "name": "Steering angle"}
+    {"id": "LEXUS_REAL_ENGINE_TORQUE", "path": "Engine", "fmt": {"bix": 32, "len": 16, "max": 1023.9688, "min": -1024,   "mul": 312.5, "div": 10000,                 "sign": true, "unit": "newtonMeters" }, "name": "Real engine torque"},
+    {"id": "LEXUS_STEERING_ANGLE_V2",  "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 3276.7,    "min": -3276.8,               "div": 10,    "add": -3276.8,               "unit": "degrees"      }, "name": "Steering angle"}
   ]},
-{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "100E"}, "freq": 1,
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "100E"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_FRONT_AXLE_CLUTCH_I",           "path": "Engine", "fmt": {           "len": 16, "max": 65.535, "mul": 10, "div": 10000, "unit": "amps" }, "name": "Front axle coupling clutch current"},
     {"id": "LEXUS_REAR_AXLE_CLUTCH_I",            "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 65.535, "mul": 10, "div": 10000, "unit": "amps" }, "name": "Rear axle coupling clutch current"},
     {"id": "LEXUS_LEFT_COUPLING_CLUTCH_CURRENT",  "path": "Engine", "fmt": {"bix": 32, "len": 16, "max": 65.535, "mul": 10, "div": 10000, "unit": "amps" }, "name": "Left coupling clutch current"},
     {"id": "LEXUS_RIGHT_COUPLING_CLUTCH_CURRENT", "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 65.535, "mul": 10, "div": 10000, "unit": "amps" }, "name": "Right coupling clutch current"}
   ]},
-{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "100F"}, "freq": 1,
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "100F"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_FRONT_AXLE_COUPLING_CLUTCH_POS_SENSOR", "path": "ECU", "fmt": {"bix": 8, "len": 1, "max": 1, "unit": "offon" }, "name": "[4WD] front axle coupling clutch position sensor status"},
     {"id": "LEXUS_REAR_AXLE_COUPLING_CLUTCH_POS_SENSOR",  "path": "ECU", "fmt": {"bix": 9, "len": 1, "max": 1, "unit": "offon" }, "name": "[4WD] rear axle coupling clutch position sensor status"}
+  ]},
+{ "hdr": "7B1", "dbg": true, "cmd": {"22": "1026"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_COUPLING_TEMP", "path": "Drivetrain", "fmt": { "len": 16, "max": 100, "min": -20, "div": 128, "unit": "celsius" }, "name": "Coupling temperature"}
   ]},
 { "hdr": "7B3", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
@@ -1036,10 +1036,6 @@
 { "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F5B"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
-  ]},
-{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_BAT_VOLTAGE", "path": "Battery", "fmt": { "len": 16, "max": 79, "mul": 12.207, "div": 10000, "unit": "volts" }, "name": "Battery voltage"}
   ]},
 { "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
   "signals": [
