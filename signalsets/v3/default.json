@@ -1,7 +1,8 @@
 { "commands": [
 { "hdr": "6F1", "eax": "40", "fcm1": true, "dbg": true, "cmd": {"22": "1700"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"}
+    {"id": "LEXUS_ODO_2",  "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"},
+    {"id": "LEXUS_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "6F1", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "4AB1"}, "freq": 0.25,
   "signals": [
@@ -26,7 +27,8 @@
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA12"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Atf temperature"}
+    {"id": "LEXUS_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Atf temperature"},
+    {"id": "LEXUS_ATF_TEMP",    "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Automatic transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA1F"}, "freq": 1,
   "signals": [
@@ -46,7 +48,7 @@
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA23"}, "freq": 15,
   "signals": [
-    {"id": "LEXUS_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[egs] mileage/odometer"}
+    {"id": "LEXUS_ODO_V3_V2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[egs] mileage/odometer"}
   ]},
 { "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA25"}, "freq": 30,
   "signals": [
@@ -175,7 +177,7 @@
   ]},
 { "hdr": "700", "dbg": true, "cmd": {"22": "1638"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_ATF_TEMP", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"}
+    {"id": "LEXUS_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"}
   ]},
 { "hdr": "700", "dbg": true, "cmd": {"22": "1F2F"}, "freq": 30,
   "signals": [
@@ -979,7 +981,7 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "28"}, "freq": 5,
   "signals": [
-    {"id": "LEXUS_ODO_V3_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V3_V3", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "51"}, "freq": 1,
   "signals": [
@@ -991,6 +993,7 @@
     {"id": "LEXUS_VVTOT",             "path": "Engine",       "fmt": {"bix": 56,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Variable valve timing oil temperature"},
     {"id": "LEXUS_PREV_TRIP_IAT",     "path": "Engine",       "fmt": {"bix": 64,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Intake air temperature, previous trip"},
     {"id": "LEXUS_EOT_V2",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature"},
+    {"id": "LEXUS_EOT_V2_V3",         "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature",                "suggestedMetric": "engineOilTemperature"},
     {"id": "LEXUS_PREV_TRIP_EOT",     "path": "Engine",       "fmt": {"bix": 80,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, previous trip"},
     {"id": "LEXUS_AC_AMB_T",          "path": "Climate",      "fmt": {"bix": 88,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature for A/C"},
     {"id": "LEXUS_PREV_TRIP_AMB_T",   "path": "Trips",        "fmt": {"bix": 96,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature, previous trip"},
