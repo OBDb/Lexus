@@ -1,38 +1,25 @@
 { "commands": [
-{ "hdr": "6F1", "eax": "40", "fcm1": true, "dbg": true, "cmd": {"22": "1700"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"}
-  ]},
-{ "hdr": "6F1", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "4AB1"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_VSS2", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "High resolution vehicle speed."}
-  ]},
-{ "hdr": "6F1", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "586F"}, "freq": 30,
-  "signals": [
-    {"id": "LEXUS_EOP_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil pressure"}
-  ]},
-{ "hdr": "6F1", "eax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "D107"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_VSS_V2", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Speedometer vehicle speed."}
-  ]},
-{ "hdr": "6F1", "eax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "D10D"}, "freq": 5,
-  "signals": [
-    {"id": "LEXUS_ODO1", "path": "Trips", "fmt": {           "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #1", "suggestedMetric": "odometer"},
-    {"id": "LEXUS_ODO2", "path": "Trips", "fmt": {"bix": 32, "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #2", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "6F1", "eax": "0D", "fcm1": true, "dbg": true, "cmd": {"22": "D240"}, "freq": 0.25,
+{ "hdr": "6F1", "rax": "60D", "eax": "0D", "fcm1": true, "dbg": true, "cmd": {"22": "D240"}, "freq": 0.25,
   "signals": [
     {"id": "LEXUS_VSS_INSTR", "path": "Movement", "fmt": { "len": 16, "max": 1000, "unit": "kilometersPerHour" }, "name": "Vehicle speed (instrument cluster)", "suggestedMetric": "speed", "description": "Instrument cluster vehicle speed."}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA12"}, "freq": 30,
+{ "hdr": "6F1", "rax": "612", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "4AB1"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Atf temperature"}
+    {"id": "LEXUS_VSS2", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "High resolution vehicle speed."}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA1F"}, "freq": 1,
+{ "hdr": "6F1", "rax": "612", "eax": "12", "fcm1": true, "dbg": true, "cmd": {"22": "586F"}, "freq": 30,
+  "signals": [
+    {"id": "LEXUS_EOP_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil pressure"}
+  ]},
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA12"}, "freq": 30,
+  "signals": [
+    {"id": "LEXUS_ATF_TEMP_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "ATF temperature"}
+  ]},
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA1F"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_KICKDOWN", "path": "Engine", "fmt": {"bix": 8, "len": 8, "max": 100, "unit": "scalar" }, "name": "Kickdown"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA22"}, "freq": 1,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA22"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_TQ_CNVRT_LOCKUP", "path": "Transmission", "name": "Torque converter lockup", "fmt": {"bix": 8, "len": 8, "map": {
           "0": { "description": "Open",               "value": "OPEN" },
@@ -44,163 +31,70 @@
         }}
     }
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA23"}, "freq": 15,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA23"}, "freq": 15,
   "signals": [
-    {"id": "LEXUS_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[egs] mileage/odometer"}
+    {"id": "LEXUS_ODO_V2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "mul": 8, "unit": "kilometers" }, "name": "[EGS] mileage/odometer"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA25"}, "freq": 30,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA25"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_EOT_V3", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil temperature"}
+    {"id": "LEXUS_EOT_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Engine oil temperature"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA28"}, "freq": 1,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA28"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_BRAKE_SWITCH", "path": "Control", "fmt": {"bix": 8, "len": 8, "max": 1, "unit": "scalar" }, "name": "Brake switch"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA2A"}, "freq": 1,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA2A"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_TQ_CNVRT_RPM",    "path": "Transmission", "fmt": {           "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "rpm" }, "name": "Torque converter speed"},
     {"id": "LEXUS_TRANS_SHAFT_RPM", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "rpm" }, "name": "Transmission output shaft speed"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA2E"}, "freq": 30,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA2E"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+    {"id": "LEXUS_GEAR_V3", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
   ]},
-{ "hdr": "6F1", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA37"}, "freq": 30,
+{ "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA37"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_TIME_D", "path": "Engine", "fmt": {           "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in d"},
-    {"id": "LEXUS_TIME_S", "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in s"},
-    {"id": "LEXUS_TIME_M", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in m"}
+    {"id": "LEXUS_TIME_D", "path": "Engine", "fmt": {           "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in D"},
+    {"id": "LEXUS_TIME_S", "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in S"},
+    {"id": "LEXUS_TIME_M", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "scalar" }, "name": "Time in M"}
   ]},
-{ "hdr": "6F1", "eax": "19", "fcm1": true, "dbg": true, "cmd": {"22": "DB32"}, "freq": 1,
+{ "hdr": "6F1", "rax": "619", "eax": "19", "fcm1": true, "dbg": true, "cmd": {"22": "DB32"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_AXLE_FRONT_ACTUAL_TORQUE",   "path": "Tires", "fmt": {           "len": 16, "max": 8000, "min": -8000, "div": 4, "sign": true, "unit": "newtonMeters" }, "name": "Front axle, actual torque"},
     {"id": "LEXUS_AXLE_FRONT_SETPOINT_TORQUE", "path": "Tires", "fmt": {"bix": 32, "len": 16, "max": 8000, "min": -8000, "div": 4, "sign": true, "unit": "newtonMeters" }, "name": "Front axle, setpoint torque"}
   ]},
-{ "hdr": "6F1", "eax": "29", "fcm1": true, "dbg": true, "cmd": {"22": "DBE4"}, "freq": 0.25,
+{ "hdr": "6F1", "rax": "619", "eax": "19", "fcm1": true, "dbg": true, "cmd": {"22": "DFE7"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_VGT_CAL_ANGLE",   "path": "Engine", "fmt": {            "len": 16, "max": 1000,    "mul": 156.25, "div": 10000, "unit": "degrees"    }, "name": "Variable geometry turbocharger calibration angle"},
+    {"id": "LEXUS_OIL_CHANGE_DIST", "path": "Fluids", "fmt": {"bix": 304, "len": 32, "max": 1000000,                              "unit": "kilometers" }, "name": "Distance since last oil change"}
+  ]},
+{ "hdr": "6F1", "rax": "629", "eax": "29", "fcm1": true, "dbg": true, "cmd": {"22": "DBE4"}, "freq": 0.25,
   "signals": [
     {"id": "LEXUS_FL_SPD", "path": "Movement", "fmt": {           "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
     {"id": "LEXUS_FR_SPD", "path": "Movement", "fmt": {"bix": 16, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
     {"id": "LEXUS_RL_SPD", "path": "Movement", "fmt": {"bix": 32, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
     {"id": "LEXUS_RR_SPD", "path": "Movement", "fmt": {"bix": 48, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
-{ "hdr": "6F1", "eax": "19", "fcm1": true, "dbg": true, "cmd": {"22": "DFE7"}, "freq": 1,
+{ "hdr": "6F1", "rax": "640", "eax": "40", "fcm1": true, "dbg": true, "cmd": {"22": "1700"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_VGT_CAL_ANGLE",   "path": "Engine", "fmt": {            "len": 16, "max": 1000,    "mul": 156.25, "div": 10000, "unit": "degrees"    }, "name": "Variable geometry turbocharger calibration angle"},
-    {"id": "LEXUS_OIL_CHANGE_DIST", "path": "Fluids", "fmt": {"bix": 304, "len": 32, "max": 1000000,                              "unit": "kilometers" }, "name": "Distance since last oil change"}
+    {"id": "LEXUS_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 1000000, "unit": "kilometers" }, "name": "Odometer variant"}
   ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1017"}, "freq": 0.25,
+{ "hdr": "6F1", "rax": "660", "eax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "D107"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_INJ_VOL", "path": "Engine", "fmt": { "len": 16, "max": 20.4, "div": 3200, "unit": "liters" }, "name": "Injection volume"}
+    {"id": "LEXUS_VSS_V3", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Speedometer vehicle speed."}
   ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "102A"}, "freq": 1,
+{ "hdr": "6F1", "rax": "660", "eax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "D10D"}, "freq": 5,
   "signals": [
-    {"id": "LEXUS_A_F_RATIO_LEARNED_IDLE_BANK_1",  "path": "Engine", "fmt": {           "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned idle, bank 1"},
-    {"id": "LEXUS_A_F_RATIO_LEARNED_LOW_BANK_1",   "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned low, bank 1"},
-    {"id": "LEXUS_A_F_RATIO_LEARNED_MID_1_BANK_1", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned mid 1, bank 1"},
-    {"id": "LEXUS_A_F_RATIO_LEARNED_MID_2_BANK_1", "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned mid 2, bank 1"},
-    {"id": "LEXUS_A_F_RATIO_LEARNED_HIGH_BANK_1",  "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned high, bank 1"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1043"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_EWP_TARGET_VSS", "path": "Engine", "fmt": {          "len": 8, "max": 6375, "mul": 25, "unit": "rpm" }, "name": "Electric water pump target speed"},
-    {"id": "LEXUS_EWP_RPM",        "path": "Engine", "fmt": {"bix": 8, "len": 8, "max": 6375, "mul": 25, "unit": "rpm" }, "name": "Electric water pump rpm"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1059"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_ACCEL_PEDAL", "path": "Control", "fmt": { "len": 8, "max": 100, "div": 1.42, "add": -41, "unit": "percent" }, "name": "Accelerator pedal"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_KNOCK_CORRECT_LEARNED_VALUE", "path": "Engine", "fmt": {           "len": 16, "max": 1023, "min": -1024, "mul": 312.5, "div": 10000, "add": -1024, "unit": "scalar" }, "name": "Knock correction, learned value"},
-    {"id": "LEXUS_KNOCK_FEEDBACK_VALUE",        "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 1023, "min": -1024, "mul": 312.5, "div": 10000, "add": -1024, "unit": "scalar" }, "name": "Knock feedback value"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "105E"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ECU_INTERNAL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Ecu internal temperature"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1062"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_EXHAUST_VVT_OCV_CONTROL_DUTY", "path": "Engine", "fmt": { "len": 16, "max": 400, "mul": 400, "div": 65535, "unit": "percent" }, "name": "Exhaust vvt oil control valve control duty"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "106F"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_INTAKE_VVT_TARGET_ANGLE_B1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Intake vvt target angle b1"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1071"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_EXHAUST_VVT_TARGET_ANGLE_B1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Exhaust vvt target angle b1"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1074"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_EOP",           "path": "Engine", "fmt": { "len": 16, "max": 5119,            "div": 12.8, "unit": "kilopascal" }, "name": "Engine oil pressure"},
-    {"id": "LEXUS_ENG_OIL_PRESS", "path": "Engine", "fmt": { "len": 16, "max": 1000, "mul": 10, "div": 128,  "unit": "kilopascal" }, "name": "Engine oil pressure"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1078"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_IDLE_SAC_CYL_1", "path": "Engine", "fmt": {           "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 1"},
-    {"id": "LEXUS_IDLE_SAC_CYL_2", "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 2"},
-    {"id": "LEXUS_IDLE_SAC_CYL_3", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 3"},
-    {"id": "LEXUS_IDLE_SAC_CYL_4", "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 4"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "107B"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_EOT_V2", "path": "Engine", "fmt": {"bix": 192, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature"},
-    {"id": "LEXUS_EOT",    "path": "Engine", "fmt": {"bix": 192, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1087"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Intake vvt change angle bank 1"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "10A5"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_MISFIRE_COUNT", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire, all cylinders counter"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "10A7"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_MIS_1", "path": "Engine.Misfires", "fmt": {           "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 1"},
-    {"id": "LEXUS_MIS_2", "path": "Engine.Misfires", "fmt": {"bix": 8,  "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 2"},
-    {"id": "LEXUS_MIS_3", "path": "Engine.Misfires", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 3"},
-    {"id": "LEXUS_MIS_4", "path": "Engine.Misfires", "fmt": {"bix": 24, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 4"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "10AA"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_MISFIRE_LOAD",   "path": "Engine", "fmt": {           "len": 8, "max": 510,               "mul": 510,  "div": 255,              "unit": "percent" }, "name": "Misfire load"},
-    {"id": "LEXUS_MISFIRE_RPM",    "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 6375,              "mul": 6375, "div": 255,              "unit": "rpm"     }, "name": "Misfire rpm"},
-    {"id": "LEXUS_MISFIRE_MARGIN", "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 127,  "min": -128,                          "add": -128, "unit": "rpm"     }, "name": "Misfire margin"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "10CD"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_LFP",  "path": "Fuel", "fmt": { "len": 16, "max": 100,                "div": 10, "add": -3276.8,               "unit": "kilopascal" }, "name": "Low fuel pressure sensor"},
-    {"id": "LEXUS_LFPS", "path": "Fuel", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10,                 "sign": true, "unit": "kilopascal" }, "name": "Low fuel pressure sensor"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1638"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ATF_TEMP", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1F2F"}, "freq": 30,
-  "signals": [
-    {"id": "LEXUS_FLI", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1F3C"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_CAT_T_BANK_1_SENSOR_1", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 1"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1F3E"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_CAT_T_BANK_1_SENSOR_2", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 2"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "1F5C"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_EOT_V3_V2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variation 2"},
-    {"id": "LEXUS_EOT_V2_V2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variation 2", "suggestedMetric": "engineOilTemperature"}
-  ]},
-{ "hdr": "700", "dbg": true, "cmd": {"22": "2848"}, "freq": 0.5,
-  "signals": [
-    {"id": "LEXUS_EOP_CONTROL_VALVE", "path": "Engine", "fmt": { "len": 16, "max": 4999, "mul": 762.93, "div": 10000, "unit": "milliamps" }, "name": "Engine oil pressure control valve"}
+    {"id": "LEXUS_ODO1", "path": "Trips", "fmt": {           "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #1", "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO2", "path": "Trips", "fmt": {"bix": 32, "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer #2", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_12V_V_V2", "path": "Battery", "fmt": { "len": 16, "max": 79, "mul": 12.207, "div": 10000, "unit": "volts" }, "name": "Battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "LEXUS_12V_V", "path": "Battery", "fmt": { "len": 16, "max": 79, "mul": 12.207, "div": 10000, "unit": "volts" }, "name": "Battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1017"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_INJ_VOL", "path": "Engine", "fmt": { "len": 16, "max": 20.4, "div": 3200, "unit": "liters" }, "name": "Injection volume"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1018"}, "freq": 1,
   "signals": [
@@ -214,14 +108,44 @@
         }}
     }
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "102A"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_A_F_RATIO_LEARNED_IDLE_BANK_1",  "path": "Engine", "fmt": {           "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned idle, bank 1"},
+    {"id": "LEXUS_A_F_RATIO_LEARNED_LOW_BANK_1",   "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned low, bank 1"},
+    {"id": "LEXUS_A_F_RATIO_LEARNED_MID_1_BANK_1", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned mid 1, bank 1"},
+    {"id": "LEXUS_A_F_RATIO_LEARNED_MID_2_BANK_1", "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned mid 2, bank 1"},
+    {"id": "LEXUS_A_F_RATIO_LEARNED_HIGH_BANK_1",  "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 50, "min": -50, "mul": 100, "div": 255, "add": -50, "unit": "percent" }, "name": "A/f ratio learned high, bank 1"}
+  ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1041"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_ECT_IGN",  "path": "Engine", "fmt": {          "len": 8, "max": 119.375, "min": -40, "mul": 62.5, "div": 100, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature, at ignition"},
     {"id": "LEXUS_ECT_INIT", "path": "Engine", "fmt": {"bix": 8, "len": 8, "max": 119.375, "min": -40, "mul": 62.5, "div": 100, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature, initial"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1043"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_EWP_TARGET_VSS", "path": "Engine", "fmt": {          "len": 8, "max": 6375, "mul": 25, "unit": "rpm" }, "name": "Electric water pump target speed"},
+    {"id": "LEXUS_EWP_RPM",        "path": "Engine", "fmt": {"bix": 8, "len": 8, "max": 6375, "mul": 25, "unit": "rpm" }, "name": "Electric water pump RPM"}
+  ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1046"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_COOLING_FAN_DUTY_RATIO", "path": "Engine", "fmt": { "len": 8, "max": 127.5, "mul": 127.5, "div": 255, "unit": "percent" }, "name": "Cooling fan duty ratio"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1059"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_ACCEL_PEDAL", "path": "Control", "fmt": { "len": 8, "max": 100, "div": 1.42, "add": -41, "unit": "percent" }, "name": "Accelerator pedal"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_KNOCK_CORRECT_LEARNED_VALUE", "path": "Engine", "fmt": {           "len": 16, "max": 1023, "min": -1024, "mul": 312.5, "div": 10000, "add": -1024, "unit": "scalar" }, "name": "Knock correction, learned value"},
+    {"id": "LEXUS_KNOCK_FEEDBACK_VALUE",        "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 1023, "min": -1024, "mul": 312.5, "div": 10000, "add": -1024, "unit": "scalar" }, "name": "Knock feedback value"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "105E"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ECU_INTERNAL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Internal temperature"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1062"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_EXHAUST_VVT_OCV_CONTROL_DUTY", "path": "Engine", "fmt": { "len": 16, "max": 400, "mul": 400, "div": 65535, "unit": "percent" }, "name": "Exhaust vvt oil control valve control duty"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "106A"}, "freq": 1,
   "signals": [
@@ -232,9 +156,33 @@
   "signals": [
     {"id": "LEXUS_DIST_SINCE_BAT_DISC", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance since last battery cable disconnection"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "106F"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_INTAKE_VVT_TARGET_ANGLE_B1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Intake vvt target angle b1"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1071"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_EXHAUST_VVT_TARGET_ANGLE_B1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Exhaust vvt target angle b1"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1074"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_EOP",           "path": "Engine", "fmt": { "len": 16, "max": 65535,                        "unit": "kilopascal" }, "name": "Engine oil pressure"},
+    {"id": "LEXUS_ENG_OIL_PRESS", "path": "Engine", "fmt": { "len": 16, "max": 1000,  "mul": 10, "div": 128, "unit": "kilopascal" }, "name": "Engine Oil Pressure"}
+  ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1075"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_IWP_SPEED", "path": "Movement", "fmt": { "len": 16, "max": 300, "min": -40, "mul": 238212, "div": 10000, "add": -256000, "unit": "celsius" }, "name": "Intercooler water pump speed"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1078"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_IDLE_SAC_CYL_1", "path": "Engine", "fmt": {           "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 1"},
+    {"id": "LEXUS_IDLE_SAC_CYL_2", "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 2"},
+    {"id": "LEXUS_IDLE_SAC_CYL_3", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 3"},
+    {"id": "LEXUS_IDLE_SAC_CYL_4", "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 15.9375, "mul": 6.25, "div": 100, "unit": "degrees" }, "name": "Idle spark advance control, cylinder 4"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "107B"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_EOT", "path": "Engine", "fmt": {"bix": 192, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1084"}, "freq": 1,
   "signals": [
@@ -246,6 +194,10 @@
     {"id": "LEXUS_ROUGH_IDLE_3",     "path": "Engine", "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Rough idle cyl.3"},
     {"id": "LEXUS_ROUGH_IDLE_2",     "path": "Engine", "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Rough idle cyl.2"},
     {"id": "LEXUS_ROUGH_IDLE_1",     "path": "Engine", "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "offon"   }, "name": "Rough idle cyl.1"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1087"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "path": "Engine", "fmt": { "len": 16, "max": 639.9, "mul": 639.9, "div": 65535, "unit": "degrees" }, "name": "Intake vvt change angle bank 1"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1088"}, "freq": 1,
   "signals": [
@@ -287,6 +239,28 @@
     {"id": "LEXUS_AF_LEARN_HIGH_PORT_B1", "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 50, "min": -50, "mul": 100,  "div": 255, "add": -50, "unit": "percent" }, "name": "A/F ratio learn value high, bank 1"},
     {"id": "LEXUS_AFRL_HIGH_1",           "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 49,             "mul": 99.6, "div": 255, "add": -50, "unit": "percent" }, "name": "A/F ratio learn value high, bank 1"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "10A5"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_MISFIRE_COUNT", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire, all cylinders counter"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "10A7"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_MISFIRE_CYL1", "path": "Engine", "fmt": {           "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 1"},
+    {"id": "LEXUS_MISFIRE_CYL2", "path": "Engine", "fmt": {"bix": 8,  "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 2"},
+    {"id": "LEXUS_MISFIRE_CYL3", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 3"},
+    {"id": "LEXUS_MISFIRE_CYL4", "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count, cylinder 4"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "10AA"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_MISFIRE_LOAD",   "path": "Engine", "fmt": {           "len": 8, "max": 510,               "mul": 510,  "div": 255,              "unit": "percent" }, "name": "Misfire load"},
+    {"id": "LEXUS_MISFIRE_RPM",    "path": "Engine", "fmt": {"bix": 24, "len": 8, "max": 6375,              "mul": 6375, "div": 255,              "unit": "rpm"     }, "name": "Misfire rpm"},
+    {"id": "LEXUS_MISFIRE_MARGIN", "path": "Engine", "fmt": {"bix": 32, "len": 8, "max": 127,  "min": -128,                          "add": -128, "unit": "rpm"     }, "name": "Misfire margin"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "10CD"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_LFPS", "path": "Fuel", "fmt": { "len": 16, "max": 3276,   "min": -3276, "div": 10,                 "sign": true, "unit": "kilopascal" }, "name": "Low fuel pressure sensor"},
+    {"id": "LEXUS_LFP",  "path": "Fuel", "fmt": { "len": 16, "max": 3276.7,               "div": 10, "add": -3276.8,               "unit": "kilopascal" }, "name": "Low fuel pressure"}
+  ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "15FA"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_ALT_DUTY_CYCLE", "path": "Engine", "fmt": { "len": 16, "max": 399, "div": 164, "unit": "percent" }, "name": "Alternator output duty cycle"}
@@ -303,9 +277,29 @@
   "signals": [
     {"id": "LEXUS_ATF_T_PAN_V3", "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, pan var.3", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1638"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ATF_TEMP", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission Fluid Temperature"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F2F"}, "freq": 30,
+  "signals": [
+    {"id": "LEXUS_FLI", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F3C"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_CAT_T_BANK_1_SENSOR_1", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 1"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F3E"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_CAT_T_BANK_1_SENSOR_2", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 2"}
+  ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F46"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_AMBIENT_T", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Ambient temperature"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F5C"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_EOT_V2_V2", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variation 2", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F6D"}, "freq": 1,
   "signals": [
@@ -333,23 +327,26 @@
   "signals": [
     {"id": "LEXUS_COOLANT_VALVE_2_CLOSE", "path": "Engine", "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "noyes" }, "name": "Coolant water route switching valve 2, closed?"}
   ]},
-{ "hdr": "701", "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "2848"}, "freq": 0.5,
+  "signals": [
+    {"id": "LEXUS_EOP_CONTROL_VALVE", "path": "Engine", "fmt": { "len": 16, "max": 4999.9207, "mul": 0.0762939, "unit": "milliamps" }, "name": "Engine oil pressure control valve"}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
     {"id": "LEXUS_ODO", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "701", "dbg": true, "cmd": {"22": "1627"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_TFP_T",     "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40,                    "div": 256, "add": -40, "unit": "celsius"    }, "name": "Transmission fluid pan temperature"},
-    {"id": "LEXUS_TF1_PAN",   "path": "Engine",       "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125,             "add": -40, "unit": "fahrenheit" }, "name": "Transmission fluid pan temperature"},
-    {"id": "LEXUS_ATF_T_PAN", "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40,                    "div": 256, "add": -40, "unit": "celsius"    }, "name": "Transmission fluid temperature, pan", "suggestedMetric": "transmissionFluidTemperature"}
-  ]},
-{ "hdr": "701", "dbg": true, "cmd": {"22": "1628"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_TF2_CONV", "path": "Engine", "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125, "add": -40, "unit": "fahrenheit" }, "name": "Transmission fluid post-converter temperature"}
   ]},
 { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1620"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_LOCK_UP_STATE", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Lock up state"}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1627"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ATF_T_PAN_GEN3", "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40,                    "div": 256, "add": -40, "unit": "celsius"    }, "name": "Transmission fluid temperature, pan", "suggestedMetric": "transmissionFluidTemperature"},
+    {"id": "LEXUS_TF1_PAN",        "path": "Engine",       "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125,             "add": -40, "unit": "fahrenheit" }, "name": "Transmission fluid pan temperature"}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1628"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_TF2_CONV", "path": "Engine", "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125, "add": -40, "unit": "fahrenheit" }, "name": "Transmission Fluid Post-Converter Temperature"}
   ]},
 { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "162B"}, "freq": 1,
   "signals": [
@@ -472,71 +469,13 @@
     {"id": "LEXUS_TP_2_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure", "suggestedMetric": "rearRightTirePressure"},
     {"id": "LEXUS_TP_2_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure"}
   ]},
-{ "hdr": "750", "eax": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "16"}, "freq": 1,
+{ "hdr": "750", "eax": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "30"}, "freq": 5,
   "signals": [
-    {"id": "LEXUS_TT_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Front left tire temperature"},
-    {"id": "LEXUS_TT_1",     "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -40, "add": -40, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "LEXUS_TT_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Front right tire temperature"},
-    {"id": "LEXUS_TT_2",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -40, "add": -40, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "LEXUS_TT_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Rear left tire temperature"},
-    {"id": "LEXUS_TT_3",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -40, "add": -40, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "LEXUS_TT_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Rear right tire temperature"},
-    {"id": "LEXUS_TT_4",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -40, "add": -40, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "LEXUS_TT_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Spare tire temperature"},
-    {"id": "LEXUS_TT_5",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -40, "add": -40, "unit": "celsius" }, "name": "Spare tire temperature"}
-  ]},
-{ "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "30"}, "freq": 2.5,
-  "signals": [
-    {"id": "LEXUS_TP_FL",        "path": "Tires", "fmt": {           "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TP_FL_V1",     "path": "Tires", "fmt": {           "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TIRE_P_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TP_FR",        "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TIRE_P_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TP_FR_V1",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TP_RL",        "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TIRE_P_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TP_RL_V1",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TP_RR",        "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TIRE_P_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TP_RR_V1",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TP_SPARE",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Spare tire pressure"},
-    {"id": "LEXUS_TIRE_P_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Spare tire pressure"},
-    {"id": "LEXUS_TP_SPARE_V1",  "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Spare tire pressure"}
-  ]},
-{ "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "1004"}, "freq": 5,
-  "signals": [
-    {"id": "LEXUS_TT_1_V2",     "path": "Tires", "fmt": {           "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature"},
-    {"id": "LEXUS_TT_FL_V3",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature"},
-    {"id": "LEXUS_TT_FL_V2",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature"},
-    {"id": "LEXUS_TT_2_V2",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature"},
-    {"id": "LEXUS_TT_FR_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature"},
-    {"id": "LEXUS_TT_FR_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature"},
-    {"id": "LEXUS_TT_3_V2",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature"},
-    {"id": "LEXUS_TT_RL_V2",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature"},
-    {"id": "LEXUS_TT_RL_V2",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature"},
-    {"id": "LEXUS_TT_4_V2",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature"},
-    {"id": "LEXUS_TT_RR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature"},
-    {"id": "LEXUS_TT_RR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature"},
-    {"id": "LEXUS_TT_SPARE_V3", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"},
-    {"id": "LEXUS_TT_5_V2",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"},
-    {"id": "LEXUS_TT_SPARE_V2", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"}
-  ]},
-{ "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "1005"}, "freq": 5,
-  "signals": [
-    {"id": "LEXUS_TP_1",        "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TP_FL_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TP_FL_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TP_2",        "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TP_FR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TP_FR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TP_3",        "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TP_RL_V2",    "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TP_RL_V2",    "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TP_4",        "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TP_RR_V2",    "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TP_RR_V2",    "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TP_SPARE_V2", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Spare tire pressure"},
-    {"id": "LEXUS_TP_5",        "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 56.121212, "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Spare tire pressure"}
+    {"id": "LEXUS_TP_FL_V3",    "path": "Tires", "fmt": {           "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TP_FR_V3",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_RL_V3",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure", "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_RR_V3",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure", "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_SPARE_V3", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "unknown" }, "name": "Front left tire pressure"}
   ]},
 { "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "2021"}, "freq": 86400,
   "signals": [
@@ -569,39 +508,84 @@
         }}
     }
   ]},
-{ "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "tmo": "96", "fcm1": true, "dbg": true, "cmd": {"21": "16"}, "freq": 5,
+{ "hdr": "750", "rax": "758", "eax": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "16"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_TIRE_T_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "LEXUS_TIRE_T_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "LEXUS_TIRE_T_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "LEXUS_TIRE_T_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "LEXUS_TIRE_T_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Spare tire temperature"}
+    {"id": "LEXUS_TT_FL_V2", "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "LEXUS_TT_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "LEXUS_TT_FL_V1", "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature"},
+    {"id": "LEXUS_TT_1",     "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "LEXUS_TT_FR_V2", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "LEXUS_TT_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "LEXUS_TT_FR_V1", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature"},
+    {"id": "LEXUS_TT_2",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "LEXUS_TT_RL_V2", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "LEXUS_TT_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "LEXUS_TT_RL_V1", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature"},
+    {"id": "LEXUS_TT_3",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "LEXUS_TT_RR_V2", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "LEXUS_TT_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "LEXUS_TT_RR_V1", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature"},
+    {"id": "LEXUS_TT_4",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "LEXUS_TT_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -20, "add": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"},
+    {"id": "LEXUS_TT_5",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"}
+  ]},
+{ "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "30"}, "freq": 2.5,
+  "signals": [
+    {"id": "LEXUS_TP_FL",        "path": "Tires", "fmt": {           "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TIRE_P_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TP_FR",        "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.88,  "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TIRE_P_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_FR_V1",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_RL",        "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.88,  "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TIRE_P_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_RL_V1",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_RR",        "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.88,  "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TIRE_P_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_RR_V1",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_SPARE",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.88,  "div": 58, "add": -0.5,               "unit": "bars" }, "name": "Spare tire pressure"},
+    {"id": "LEXUS_TIRE_P_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.896, "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Spare tire pressure"},
+    {"id": "LEXUS_TP_SPARE_V1",  "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 3.8,   "div": 58, "add": -0.5, "nullmin": 0, "unit": "bars" }, "name": "Spare tire pressure"}
+  ]},
+{ "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "1004"}, "freq": 5,
+  "signals": [
+    {"id": "LEXUS_TT_1_V2",     "path": "Tires", "fmt": {           "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature"},
+    {"id": "LEXUS_TT_FL_V2",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature"},
+    {"id": "LEXUS_TT_FL_V2_V2", "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature"},
+    {"id": "LEXUS_TT_2_V2",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature"},
+    {"id": "LEXUS_TT_FR_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature"},
+    {"id": "LEXUS_TT_FR_V2_V2", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature"},
+    {"id": "LEXUS_TT_3_V2",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature"},
+    {"id": "LEXUS_TT_RL_V2",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature"},
+    {"id": "LEXUS_TT_RL_V2_V2", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature"},
+    {"id": "LEXUS_TT_4_V2",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature"},
+    {"id": "LEXUS_TT_RR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature"},
+    {"id": "LEXUS_TT_RR_V2_V2", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature"},
+    {"id": "LEXUS_TT_SPARE_V2", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"},
+    {"id": "LEXUS_TT_5_V2",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"},
+    {"id": "LEXUS_TT_SPARE_V2", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"}
+  ]},
+{ "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "1005"}, "freq": 5,
+  "signals": [
+    {"id": "LEXUS_TP_1",        "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_FL_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TP_FL_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TP_2",        "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "LEXUS_TP_FR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_FR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "LEXUS_TP_3",        "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_RL_V2",    "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_RL_V2",    "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_4",        "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 56.8,      "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "LEXUS_TP_RR_V2",    "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_RR_V2",    "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "LEXUS_TP_SPARE_V2", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 4,         "div": 58,    "add": -0.5,                     "unit": "bars" }, "name": "Spare tire pressure"},
+    {"id": "LEXUS_TP_5",        "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 56.121212, "div": 4.125, "add": -5.6969697, "nullmin": 0, "unit": "psi"  }, "name": "Spare tire pressure"},
+    {"id": "LEXUS_TP_SPARE_V2", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 3.8,       "div": 58,    "add": -0.5,       "nullmin": 0, "unit": "bars" }, "name": "Spare tire pressure"}
   ]},
 { "hdr": "780", "rax": "788", "dbg": true, "cmd": {"21": "04"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_BUCKLE_RS", "path": "Seatbelts", "fmt": {"bix": 24, "len": 8, "max": 255, "unit": "scalar" }, "name": "Buckle switch, right side"},
     {"id": "LEXUS_BUCKLE_LS", "path": "Seatbelts", "fmt": {"bix": 32, "len": 8, "max": 255, "unit": "scalar" }, "name": "Buckle switch, left side"}
-  ]},
-{ "hdr": "7B0", "dbg": true, "cmd": {"21": "03"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_TIRE_FR_SPD", "path": "Movement", "fmt": {           "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "LEXUS_TIRE_FL_SPD", "path": "Movement", "fmt": {"bix": 8,  "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "LEXUS_TIRE_RR_SPD", "path": "Movement", "fmt": {"bix": 16, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "LEXUS_TIRE_RL_SPD", "path": "Movement", "fmt": {"bix": 24, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
-  ]},
-{ "hdr": "7B0", "dbg": true, "cmd": {"21": "21"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_VSS",               "path": "Movement", "fmt": { "len": 8, "max": 326,   "mul": 1.28,              "unit": "kilometersPerHour" }, "name": "Vehicle speed",      "suggestedMetric": "speed", "description": "Current vehicle speed."},
-    {"id": "LEXUS_VEHICLE_SPEED_7B0", "path": "Movement", "fmt": { "len": 8, "max": 326.4, "mul": 326.4, "div": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed, 7B0", "suggestedMetric": "speed"}
-  ]},
-{ "hdr": "7B0", "dbg": true, "cmd": {"21": "47"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_LAT_G",          "path": "Orientation", "fmt": {           "len": 8,  "max": 2.5,    "min": -2.5,    "div": 50,                 "sign": true, "unit": "gravity" }, "name": "Lateral g"},
-    {"id": "LEXUS_LNG_G",          "path": "Orientation", "fmt": {"bix": 8,  "len": 8,  "max": 2.5,    "min": -2.5,    "div": 50,                 "sign": true, "unit": "gravity" }, "name": "Longitudinal g"},
-    {"id": "LEXUS_YAW_RATE",       "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,    "min": -128,               "add": -128,                  "unit": "degrees" }, "name": "Yaw rate value (degrees/sec)"},
-    {"id": "LEXUS_YAW",            "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,    "min": -128,               "add": -128,                  "unit": "scalar"  }, "name": "Yaw rate value"},
-    {"id": "LEXUS_STEER_ANGLE",    "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276,   "min": -3276,   "div": 10, "add": -3276.8,               "unit": "degrees" }, "name": "Steering wheel angle",         "description": "Positive = counter-clockwise, negative = clockwise."},
-    {"id": "LEXUS_STEERING_ANGLE", "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "add": -3276.8,               "unit": "degrees" }, "name": "Steering angle value"}
   ]},
 { "hdr": "7B0", "dbg": true, "cmd": {"21": "BC"}, "freq": 1,
   "signals": [
@@ -611,9 +595,12 @@
         }}
     }
   ]},
-{ "hdr": "7B0", "dbg": true, "cmd": {"22": "1006"}, "freq": 5,
+{ "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "03"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_MASTER_CYL_TEMP", "path": "Brakes", "fmt": { "len": 8, "max": 100, "min": -20, "add": -80, "unit": "celsius" }, "name": "Master cylinder sensor temperature"}
+    {"id": "LEXUS_TIRE_FR_SPD", "path": "Movement", "fmt": {           "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "LEXUS_TIRE_FL_SPD", "path": "Movement", "fmt": {"bix": 8,  "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "LEXUS_TIRE_RR_SPD", "path": "Movement", "fmt": {"bix": 16, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "LEXUS_TIRE_RL_SPD", "path": "Movement", "fmt": {"bix": 24, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "05"}, "freq": 0.5,
   "signals": [
@@ -641,6 +628,11 @@
     {"id": "LEXUS_STOP_LIGHT_SW",    "path": "Control", "fmt": {          "len": 1, "max": 1, "unit": "offon" }, "name": "Stop light"},
     {"id": "LEXUS_PARKING_BRAKE_SW", "path": "Control", "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "offon" }, "name": "Parking brake"}
   ]},
+{ "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "21"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_VSS",               "path": "Movement", "fmt": { "len": 8, "max": 326,   "mul": 1.28,              "unit": "kilometersPerHour" }, "name": "Vehicle speed",      "suggestedMetric": "speed", "description": "Current vehicle speed."},
+    {"id": "LEXUS_VEHICLE_SPEED_7B0", "path": "Movement", "fmt": { "len": 8, "max": 326.4, "mul": 326.4, "div": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed, 7B0", "suggestedMetric": "speed"}
+  ]},
 { "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "3C"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_STOP_LIGHT_RELAY", "path": "Movement", "fmt": { "len": 1, "max": 1, "unit": "offon" }, "name": "Stop light relay"}
@@ -666,6 +658,15 @@
     {"id": "LEXUS_ZP_DEC2",     "path": "Orientation", "fmt": {"bix": 8,  "len": 8, "max": 24.91, "min": -25.11, "mul": 0.1961568627, "add": -25.11, "unit": "metersPerSecondSquared" }, "name": "Zero point of deceleration 2"},
     {"id": "LEXUS_ZP_YAW",      "path": "Orientation", "fmt": {"bix": 16, "len": 8, "max": 127,   "min": -128,                        "add": -128,   "unit": "scalar"                 }, "name": "Zero point of yaw rate (degrees/sec)"},
     {"id": "LEXUS_ZP_YAW_RATE", "path": "Control",     "fmt": {"bix": 16, "len": 8, "max": 127,   "min": -128,                        "add": -128,   "unit": "degrees"                }, "name": "Zero point of yaw rate"}
+  ]},
+{ "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "47"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_LAT_G",          "path": "Orientation", "fmt": {           "len": 8,  "max": 2.5,    "min": -2.5,    "div": 50,                 "sign": true, "unit": "gravity" }, "name": "Lateral g"},
+    {"id": "LEXUS_LNG_G",          "path": "Orientation", "fmt": {"bix": 8,  "len": 8,  "max": 2.5,    "min": -2.5,    "div": 50,                 "sign": true, "unit": "gravity" }, "name": "Longitudinal g"},
+    {"id": "LEXUS_YAW_RATE",       "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,    "min": -128,               "add": -128,                  "unit": "degrees" }, "name": "Yaw rate value"},
+    {"id": "LEXUS_YAW",            "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,    "min": -128,               "add": -128,                  "unit": "scalar"  }, "name": "Yaw rate value"},
+    {"id": "LEXUS_STEER_ANGLE",    "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276,   "min": -3276,   "div": 10, "add": -3276.8,               "unit": "degrees" }, "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise."},
+    {"id": "LEXUS_STEERING_ANGLE", "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "add": -3276.8,               "unit": "degrees" }, "name": "Steering angle value"}
   ]},
 { "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "48"}, "freq": 1,
   "signals": [
@@ -729,23 +730,17 @@
     {"id": "LEXUS_HV_COMM_OPEN",           "path": "Engine",      "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "noyes" }, "name": "Hydraulic valve, communication open"},
     {"id": "LEXUS_HV_COMMUNICATION_OPEN",  "path": "Engine",      "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "offon" }, "name": "HV communication open"}
   ]},
-{ "hdr": "7B1", "dbg": true, "cmd": {"22": "1026"}, "freq": 1,
+{ "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"22": "1006"}, "freq": 5,
   "signals": [
-    {"id": "LEXUS_COUPLING_TEMP", "path": "Drivetrain", "fmt": { "len": 16, "max": 100, "min": -20, "div": 128, "unit": "celsius" }, "name": "Coupling temperature"}
+    {"id": "LEXUS_MASTER_CYL_TEMP", "path": "Brakes", "fmt": { "len": 8, "max": 100, "min": -20, "add": -80, "unit": "celsius" }, "name": "Master cylinder sensor temperature"}
   ]},
-{ "hdr": "7B3", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
+{ "hdr": "7B1", "rax": "7B9", "dbg": true, "cmd": {"22": "1026"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_STEERING_ANGLE_V2", "path": "Control", "fmt": { "len": 16, "max": 410, "min": -410, "mul": 1.5, "sign": true, "unit": "degrees" }, "name": "Steering angle"}
+    {"id": "LEXUS_COUPLING_TEMP", "path": "Drivetrain", "fmt": { "len": 16, "max": 100, "min": -20, "div": 128, "unit": "celsius" }, "name": "Coupling Temperature"}
   ]},
-{ "hdr": "7C0", "dbg": true, "cmd": {"21": "29"}, "freq": 5,
+{ "hdr": "7B3", "rax": "7BB", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_FLI_VOL",    "path": "Fuel", "fmt": { "len": 8, "max": 21,  "mul": 500, "div": 3785, "unit": "gallons" }, "name": "Fuel level (volume)", "suggestedMetric": "fuelTankLevel"},
-    {"id": "LEXUS_FUEL_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 255,                          "unit": "liters"  }, "name": "Fuel input"}
-  ]},
-{ "hdr": "7C0", "fcm1": true, "dbg": true, "cmd": {"22": "1022"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_FLV",        "path": "Fuel", "fmt": { "len": 16, "max": 655,    "div": 100, "nullmax": 655, "unit": "liters" }, "name": "Fuel remaining", "suggestedMetric": "fuelTankLevel"},
-    {"id": "LEXUS_FUEL_LEVEL", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "liters" }, "name": "Fuel level"}
+    {"id": "LEXUS_STEERING_ANGLE_V2", "path": "Control", "fmt": { "len": 16, "max": 410, "min": -410, "mul": 1.5, "sign": true, "unit": "degrees" }, "name": "Steering Angle"}
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "12"}, "freq": 1,
   "signals": [
@@ -766,6 +761,11 @@
   "signals": [
     {"id": "LEXUS_ECT_7C0",   "path": "Engine", "fmt": { "len": 8, "max": 127.5,             "div": 2, "unit": "celsius" }, "name": "Engine coolant temperature", "suggestedMetric": "engineCoolantTemperature"},
     {"id": "LEXUS_COOLANT_T", "path": "Engine", "fmt": { "len": 8, "max": 127.5, "mul": 0.5,           "unit": "celsius" }, "name": "Coolant temperature"}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "29"}, "freq": 5,
+  "signals": [
+    {"id": "LEXUS_FLI_VOL",    "path": "Fuel", "fmt": { "len": 8, "max": 21,  "mul": 500, "div": 3785, "unit": "gallons" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"},
+    {"id": "LEXUS_FUEL_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 255,                          "unit": "liters"  }, "name": "Fuel input"}
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "41"}, "freq": 5,
   "signals": [
@@ -793,6 +793,11 @@
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"22": "1021"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_BATTERY_VOLTAGE_V2", "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "unit": "volts" }, "name": "B+ Battery Voltage"}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "fcm1": true, "dbg": true, "cmd": {"22": "1022"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_FLV",        "path": "Fuel", "fmt": { "len": 16, "max": 655,    "div": 100, "nullmax": 655, "unit": "liters" }, "name": "Fuel remaining", "suggestedMetric": "fuelTankLevel"},
+    {"id": "LEXUS_FUEL_LEVEL", "path": "Fuel", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "liters" }, "name": "Fuel level"}
   ]},
 { "hdr": "7C4", "dbg": true, "cmd": {"21": "43"}, "freq": 1,
   "signals": [
@@ -844,7 +849,7 @@
   "signals": [
     {"id": "LEXUS_REGULATOR_P", "path": "Engine", "fmt": { "len": 8, "max": 3.29437, "min": -0.45668, "mul": 3.75105, "div": 255, "add": -0.45668, "unit": "scalar" }, "name": "Regulator pressure sensor"}
   ]},
-{ "hdr": "7D0", "dbg": true, "cmd": {"21": "62"}, "freq": 1,
+{ "hdr": "7D0", "rax": "7D8", "dbg": true, "cmd": {"21": "62"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_PARKING_BRAKE_2", "path": "Control", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Parking brake"},
     {"id": "LEXUS_PARKING_BRAKE", "path": "Control", "name": "Parking brake", "fmt": {"len": 8, "map": {
@@ -863,80 +868,64 @@
         }}
     }
   ]},
-{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
+{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F5B"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_ODO_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1040"}, "freq": 1,
+{ "hdr": "7D2", "rax": "708", "dbg": true, "cmd": {"22": "10A2"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_RM_TQ_REQ", "path": "Engine", "fmt": {           "len": 16, "max": 32767, "min": -32768,           "add": -32768, "unit": "newtonMeters" }, "name": "Rear motor torque, requested"},
+    {"id": "LEXUS_RM_TQ",     "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 4095,  "min": -4096,  "div": 8, "add": -4096,  "unit": "newtonMeters" }, "name": "Rear motor torque"}
+  ]},
+{ "hdr": "7D2", "rax": "708", "dbg": true, "cmd": {"22": "1F46"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_AAT", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Ambient temperature"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
+  "signals": [
+    {"id": "LEXUS_ODO_V2_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1040"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_TRANSAXLE_OIL_T", "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transaxle oil temperature"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1075"}, "freq": 0.1,
+{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
+  "signals": [
+    {"id": "LEXUS_HVBAT_SOC_MAX", "path": "Battery", "fmt": {"bix": 8,  "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (max)"},
+    {"id": "LEXUS_HVBAT_SOC_MIN", "path": "Battery", "fmt": {"bix": 16, "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (min)"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1075"}, "freq": 0.1,
   "signals": [
     {"id": "LEXUS_FR_WHEEL_VSS", "path": "Movement", "fmt": {           "len": 16, "max": 327.67, "min": -327.68, "div": 100, "add": -327.68, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
     {"id": "LEXUS_FL_WHEEL_VSS", "path": "Movement", "fmt": {"bix": 16, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "add": -327.68, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
     {"id": "LEXUS_RR_WHEEL_VSS", "path": "Movement", "fmt": {"bix": 32, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "add": -327.68, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "LEXUS_RL_WHEEL_VSS", "path": "Movement", "fmt": {"bix": 48, "len": 16, "max": 327.67, "min": -327.68, "div": 100, "add": -327.68, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "10A1"}, "freq": 0.25,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "10A1"}, "freq": 0.25,
   "signals": [
-    {"id": "LEXUS_RPM", "path": "Engine", "fmt": {           "len": 16, "max": 32767, "min": -32768,           "add": -32768, "unit": "rpm"          }, "name": "Motor rpm"},
+    {"id": "LEXUS_RPM", "path": "Engine", "fmt": {           "len": 16, "max": 32767, "min": -32768,           "add": -32768, "unit": "rpm"          }, "name": "Motor RPM"},
     {"id": "LEXUS_TQ",  "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 4095,  "min": -4096,  "div": 8, "add": -4096,  "unit": "newtonMeters" }, "name": "Motor torque"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "10A2"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_RM_TQ_REQ", "path": "Engine", "fmt": {           "len": 16, "max": 32767, "min": -32768,           "add": -32768, "unit": "newtonMeters" }, "name": "Rear motor torque, requested"},
-    {"id": "LEXUS_RM_TQ",     "path": "Engine", "fmt": {"bix": 48, "len": 16, "max": 4095,  "min": -4096,  "div": 8, "add": -4096,  "unit": "newtonMeters" }, "name": "Rear motor torque"}
-  ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "10A6"}, "freq": 1,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "10A6"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_RM_INVRT_COOL_T", "path": "Engine", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Rear motor inverter, coolant temperature"},
     {"id": "LEXUS_M_INVRT_MAX_T",   "path": "Engine", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Motor inverter, maximum temperature"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "10B2"}, "freq": 1,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "10B2"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_INVRT_COOLANT_T", "path": "Engine", "fmt": { "len": 8, "max": 100, "add": -40, "unit": "celsius" }, "name": "Inverter coolant temperature"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "15EE"}, "freq": 1,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "15EE"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_12V_V", "path": "Battery", "fmt": { "len": 8, "max": 80.2, "mul": 0.31448, "add": 0.0125, "unit": "volts" }, "name": "12v battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "LEXUS_12V_V_V2", "path": "Battery", "fmt": { "len": 8, "max": 80.2, "mul": 0.31448, "add": 0.0125, "unit": "volts" }, "name": "12V battery voltage", "suggestedMetric": "starterBatteryVoltage"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "15F7"}, "freq": 0.5,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "15F7"}, "freq": 0.5,
   "signals": [
-    {"id": "LEXUS_12V_C", "path": "Battery", "fmt": { "len": 16, "max": 124, "min": -125, "mul": 38.147, "div": 10000, "add": -125, "unit": "amps" }, "name": "12v battery current"}
+    {"id": "LEXUS_12V_C", "path": "Battery", "fmt": { "len": 16, "max": 124, "min": -125, "mul": 38.147, "div": 10000, "add": -125, "unit": "amps" }, "name": "12V battery current"}
   ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "15F8"}, "freq": 1,
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "15F8"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_12V_T", "path": "Battery", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "12v battery temperature"}
-  ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1F05"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_COOL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Coolant temperature"}
-  ]},
-{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F0D"}, "freq": 0.25,
-  "signals": [
-    {"id": "LEXUS_VSS_V3", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
-  ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1F46"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_AAT", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Ambient temperature"}
-  ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1F49"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ACC_PEDAL_POS_1", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal, position 1"}
-  ]},
-{ "hdr": "7D2", "dbg": true, "cmd": {"22": "1F4A"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ACC_PEDAL_POS_2", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal, position 2"}
-  ]},
-{ "hdr": "7D2", "fcm1": true, "dbg": true, "cmd": {"22": "1F5B"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_SOC", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
-  ]},
-{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "106C"}, "freq": 5,
-  "signals": [
-    {"id": "LEXUS_HVBAT_SOC_MAX", "path": "Battery", "fmt": {"bix": 8,  "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (max)"},
-    {"id": "LEXUS_HVBAT_SOC_MIN", "path": "Battery", "fmt": {"bix": 16, "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery charge (min)"}
+    {"id": "LEXUS_12V_T", "path": "Battery", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "12V battery temperature"}
   ]},
 { "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1609"}, "freq": 1,
   "signals": [
@@ -950,68 +939,26 @@
   "signals": [
     {"id": "LEXUS_HVBAT_MIN_T", "path": "Battery", "fmt": { "len": 8, "max": 205, "min": -50, "add": -50, "unit": "celsius" }, "name": "HV battery minimum temperature"}
   ]},
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1F05"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_COOL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Coolant temperature"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "1F0D"}, "freq": 0.25,
+  "signals": [
+    {"id": "LEXUS_VSS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1F49"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ACC_PEDAL_POS_1", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal, position 1"}
+  ]},
+{ "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1F4A"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ACC_PEDAL_POS_2", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal, position 2"}
+  ]},
 { "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1F9A"}, "freq": 0.5,
   "signals": [
     {"id": "LEXUS_HVBAT_V", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1023,                   "mul": 156.25, "div": 10000,               "unit": "volts" }, "name": "HV battery voltage"},
     {"id": "LEXUS_HVBAT_C", "path": "Battery", "fmt": {"bix": 32, "len": 16, "max": 3276.7, "min": -3276.8,                "div": 10,    "sign": true, "unit": "amps"  }, "name": "HV battery current"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"21": "21"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_CC_VSS",                      "path": "Cruise control", "fmt": {           "len": 8, "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Cruise control speed"},
-    {"id": "LEXUS_CC_S",                        "path": "Cruise control", "fmt": {"bix": 8,  "len": 8, "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Cruise control speed"},
-    {"id": "LEXUS_CC_DRIVING_FORCE",            "path": "Cruise control", "fmt": {"bix": 16, "len": 8, "max": 50.8, "min": -51.2, "mul": 102, "div": 255, "add": -51.2, "unit": "scalar"            }, "name": "Requested driving force"},
-    {"id": "LEXUS_CC_ON",                       "path": "Cruise control", "fmt": {"bix": 24, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control, on"},
-    {"id": "LEXUS_CC_CC_ON",                    "path": "Cruise control", "fmt": {"bix": 25, "len": 1, "max": 1,                                                        "unit": "noyes"             }, "name": "Cruise control, activated?"},
-    {"id": "LEXUS_CC_CCS_INDICATOR_M_CPU_ON",   "path": "Cruise control", "fmt": {"bix": 26, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control indicator"},
-    {"id": "LEXUS_CC_CCS_READY_M_CPU_ON",       "path": "Cruise control", "fmt": {"bix": 28, "len": 1, "max": 1,                                                        "unit": "noyes"             }, "name": "Cruise control ready?"},
-    {"id": "LEXUS_CC_MAIN_SW_M_CPU_ON",         "path": "Cruise control", "fmt": {"bix": 30, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control, main switch"},
-    {"id": "LEXUS_CC_STOP_LIGHT_SWITCH_1_ON",   "path": "Cruise control", "fmt": {"bix": 32, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control stop light switch 1"},
-    {"id": "LEXUS_CC_STOP_LIGHT_SWITCH_2_ON",   "path": "Cruise control", "fmt": {"bix": 33, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control stop light switch 2"},
-    {"id": "LEXUS_CC_RES_ACC_SWITCH_ON",        "path": "Cruise control", "fmt": {"bix": 35, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Resume/accelerate switch"},
-    {"id": "LEXUS_CC_LIVE_SET_COAST_SWITCH_ON", "path": "Cruise control", "fmt": {"bix": 36, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Coast switch"},
-    {"id": "LEXUS_CC_CANCEL_SWITCH_ON",         "path": "Cruise control", "fmt": {"bix": 37, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cancel switch"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"21": "28"}, "freq": 5,
-  "signals": [
-    {"id": "LEXUS_ODO_V3_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"21": "51"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ENG_START_T",       "path": "Engine",       "fmt": {            "len": 16, "max": 655350,             "mul": 10,                            "unit": "milliseconds" }, "name": "Engine starting time"},
-    {"id": "LEXUS_ENG_SPD_START_OFF", "path": "Movement",     "fmt": {"bix": 16,  "len": 16, "max": 51199,              "mul": 100, "div": 128,               "unit": "rpm"          }, "name": "Engine speed, starter off"},
-    {"id": "LEXUS_IMMOB_FUEL_CUT",    "path": "Fuel",         "fmt": {"bix": 32,  "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Immobilizer fuel cut"},
-    {"id": "LEXUS_STARTER_CNT",       "path": "Engine",       "fmt": {"bix": 33,  "len": 7,  "max": 127,                                                      "unit": "scalar"       }, "name": "Starter count"},
-    {"id": "LEXUS_PREV_TRIP_DST",     "path": "Trips",        "fmt": {"bix": 40,  "len": 16, "max": 655.35,                         "div": 100,               "unit": "kilometers"   }, "name": "Previous trip distance"},
-    {"id": "LEXUS_VVTOT",             "path": "Engine",       "fmt": {"bix": 56,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Variable valve timing oil temperature"},
-    {"id": "LEXUS_PREV_TRIP_IAT",     "path": "Engine",       "fmt": {"bix": 64,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Intake air temperature, previous trip"},
-    {"id": "LEXUS_EOT_V2",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature"},
-    {"id": "LEXUS_PREV_TRIP_EOT",     "path": "Engine",       "fmt": {"bix": 80,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, previous trip"},
-    {"id": "LEXUS_AC_AMB_T",          "path": "Climate",      "fmt": {"bix": 88,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature for A/C"},
-    {"id": "LEXUS_PREV_TRIP_AMB_T",   "path": "Trips",        "fmt": {"bix": 96,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature, previous trip"},
-    {"id": "LEXUS_TPS",               "path": "Engine",       "fmt": {"bix": 104, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Throttle position"},
-    {"id": "LEXUS_ISC_FLOW",          "path": "Engine",       "fmt": {"bix": 120, "len": 16, "max": 79.99,              "mul": 10,  "div": 8192,              "unit": "scalar"       }, "name": "Idle speed control flow"},
-    {"id": "LEXUS_ISC_POS",           "path": "Engine",       "fmt": {"bix": 136, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Idle speed control position"},
-    {"id": "LEXUS_ISC_FB",            "path": "Engine",       "fmt": {"bix": 168, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control feedback"},
-    {"id": "LEXUS_ISC_LEARN",         "path": "Engine",       "fmt": {"bix": 184, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control learning value"},
-    {"id": "LEXUS_ELEC_LOAD_FB",      "path": "Electrical",   "fmt": {"bix": 200, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Electric load feedback"},
-    {"id": "LEXUS_AC_FB",             "path": "Climate",      "fmt": {"bix": 216, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Air conditioner feedback"},
-    {"id": "LEXUS_N_RANGE_STS",       "path": "Transmission", "fmt": {"bix": 232, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral range status"},
-    {"id": "LEXUS_NEUTRAL_CTRL",      "path": "Transmission", "fmt": {"bix": 233, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral control"},
-    {"id": "LEXUS_LOW_RPM_CTRL",      "path": "Engine",       "fmt": {"bix": 234, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution control"},
-    {"id": "LEXUS_VVT_ADV_FAIL",      "path": "Engine",       "fmt": {"bix": 235, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Variable valve timing advance fail"},
-    {"id": "LEXUS_LOW_RPM_START",     "path": "Engine",       "fmt": {"bix": 236, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution for engine start"},
-    {"id": "LEXUS_ENG_START_HESIT",   "path": "Engine",       "fmt": {"bix": 237, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Engine start hesitation"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"21": "82"}, "freq": 1,
-  "signals": [
-    {"id": "LEXUS_ATF_PAN_T", "path": "Transmission", "fmt": {           "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (pan)"},
-    {"id": "LEXUS_ATF_TQC_T", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (torque converter)"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"21": "85"}, "freq": 0.4,
-  "signals": [
-    {"id": "LEXUS_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20,  "unit": "scalar" }, "name": "Gear"},
-    {"id": "LEXUS_GEAR_V2_V2", "path": "Transmission", "fmt": {          "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear, variant"},
-    {"id": "LEXUS_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,   "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
   "signals": [
@@ -1082,6 +1029,22 @@
     {"id": "LEXUS_MILON_RUN_DISTANCE",             "path": "DTCs", "fmt": {"bix": 48, "len": 16, "max": 65535, "unit": "kilometers" }, "name": "MIL ON run distance"},
     {"id": "LEXUS_RUNNING_TIME_FROM_MIL_ON",       "path": "DTCs", "fmt": {"bix": 64, "len": 16, "max": 65535, "unit": "minutes"    }, "name": "Running time from MIL ON"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "21"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_CC_VSS",                      "path": "Cruise control", "fmt": {           "len": 8, "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Cruise control speed"},
+    {"id": "LEXUS_CC_S",                        "path": "Cruise control", "fmt": {"bix": 8,  "len": 8, "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Cruise control speed"},
+    {"id": "LEXUS_CC_DRIVING_FORCE",            "path": "Cruise control", "fmt": {"bix": 16, "len": 8, "max": 50.8, "min": -51.2, "mul": 102, "div": 255, "add": -51.2, "unit": "scalar"            }, "name": "Requested driving force"},
+    {"id": "LEXUS_CC_ON",                       "path": "Cruise control", "fmt": {"bix": 24, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control, on"},
+    {"id": "LEXUS_CC_CC_ON",                    "path": "Cruise control", "fmt": {"bix": 25, "len": 1, "max": 1,                                                        "unit": "noyes"             }, "name": "Cruise control, activated?"},
+    {"id": "LEXUS_CC_CCS_INDICATOR_M_CPU_ON",   "path": "Cruise control", "fmt": {"bix": 26, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control indicator"},
+    {"id": "LEXUS_CC_CCS_READY_M_CPU_ON",       "path": "Cruise control", "fmt": {"bix": 28, "len": 1, "max": 1,                                                        "unit": "noyes"             }, "name": "Cruise control ready?"},
+    {"id": "LEXUS_CC_MAIN_SW_M_CPU_ON",         "path": "Cruise control", "fmt": {"bix": 30, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control, main switch"},
+    {"id": "LEXUS_CC_STOP_LIGHT_SWITCH_1_ON",   "path": "Cruise control", "fmt": {"bix": 32, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control stop light switch 1"},
+    {"id": "LEXUS_CC_STOP_LIGHT_SWITCH_2_ON",   "path": "Cruise control", "fmt": {"bix": 33, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cruise control stop light switch 2"},
+    {"id": "LEXUS_CC_RES_ACC_SWITCH_ON",        "path": "Cruise control", "fmt": {"bix": 35, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Resume/accelerate switch"},
+    {"id": "LEXUS_CC_LIVE_SET_COAST_SWITCH_ON", "path": "Cruise control", "fmt": {"bix": 36, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Coast switch"},
+    {"id": "LEXUS_CC_CANCEL_SWITCH_ON",         "path": "Cruise control", "fmt": {"bix": 37, "len": 1, "max": 1,                                                        "unit": "offon"             }, "name": "Cancel switch"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "24"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_COMMUNICATION_WITH_HV",     "path": "Climate", "fmt": {"bix": 2, "len": 1, "max": 1, "unit": "offon"  }, "name": "Communication with HV"},
@@ -1110,6 +1073,10 @@
     {"id": "LEXUS_TC_TERMINAL",                             "path": "Control", "fmt": {"bix": 61, "len": 1, "max": 1, "unit": "scalar" }, "name": "TC"},
     {"id": "LEXUS_A_C_COMPRESSOR",                          "path": "Control", "fmt": {"bix": 64, "len": 1, "max": 1, "unit": "offon"  }, "name": "A/C compressor"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "28"}, "freq": 5,
+  "signals": [
+    {"id": "LEXUS_ODO_V3", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "45"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_MISFIRE_RPM_V2",            "path": "Engine",          "fmt": {"bix": 8,  "len": 8,  "max": 6375,               "mul": 25,                          "unit": "rpm"     }, "name": "Misfire RPM"},
@@ -1121,6 +1088,47 @@
     {"id": "LEXUS_ALL_CYLINDERS_MISFIRE_CNT", "path": "Engine.Misfires", "fmt": {"bix": 56, "len": 8,  "max": 255,                                                    "unit": "scalar"  }, "name": "All cylinders misfire count"},
     {"id": "LEXUS_IGNITION_TRIG_CNT",         "path": "Control",         "fmt": {"bix": 64, "len": 16, "max": 65535,                                                  "unit": "scalar"  }, "name": "Ignition trigger count"},
     {"id": "LEXUS_MISFIRE_MARGIN_V2",         "path": "Engine.Misfires", "fmt": {"bix": 80, "len": 8,  "max": 127,   "min": -128,                        "add": -128, "unit": "percent" }, "name": "Misfire margin"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "51"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ENG_START_T",       "path": "Engine",       "fmt": {            "len": 16, "max": 655350,             "mul": 10,                            "unit": "milliseconds" }, "name": "Engine starting time"},
+    {"id": "LEXUS_ENG_SPD_START_OFF", "path": "Movement",     "fmt": {"bix": 16,  "len": 16, "max": 51199,              "mul": 100, "div": 128,               "unit": "rpm"          }, "name": "Engine speed, starter off"},
+    {"id": "LEXUS_IMMOB_FUEL_CUT",    "path": "Fuel",         "fmt": {"bix": 32,  "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Immobilizer fuel cut"},
+    {"id": "LEXUS_STARTER_CNT",       "path": "Engine",       "fmt": {"bix": 33,  "len": 7,  "max": 127,                                                      "unit": "scalar"       }, "name": "Starter count"},
+    {"id": "LEXUS_PREV_TRIP_DST",     "path": "Trips",        "fmt": {"bix": 40,  "len": 16, "max": 655.35,                         "div": 100,               "unit": "kilometers"   }, "name": "Previous trip distance"},
+    {"id": "LEXUS_VVTOT",             "path": "Engine",       "fmt": {"bix": 56,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Variable valve timing oil temperature"},
+    {"id": "LEXUS_PREV_TRIP_IAT",     "path": "Engine",       "fmt": {"bix": 64,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Intake air temperature, previous trip"},
+    {"id": "LEXUS_EOT_V2",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, variation 2",   "suggestedMetric": "engineOilTemperature"},
+    {"id": "LEXUS_EOT_V3",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature"},
+    {"id": "LEXUS_PREV_TRIP_EOT",     "path": "Engine",       "fmt": {"bix": 80,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, previous trip"},
+    {"id": "LEXUS_AC_AMB_T",          "path": "Climate",      "fmt": {"bix": 88,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature for A/C"},
+    {"id": "LEXUS_PREV_TRIP_AMB_T",   "path": "Trips",        "fmt": {"bix": 96,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature, previous trip"},
+    {"id": "LEXUS_TPS",               "path": "Engine",       "fmt": {"bix": 104, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Throttle position"},
+    {"id": "LEXUS_ISC_FLOW",          "path": "Engine",       "fmt": {"bix": 120, "len": 16, "max": 79.99,              "mul": 10,  "div": 8192,              "unit": "scalar"       }, "name": "Idle speed control flow"},
+    {"id": "LEXUS_ISC_POS",           "path": "Engine",       "fmt": {"bix": 136, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Idle speed control position"},
+    {"id": "LEXUS_ISC_FB",            "path": "Engine",       "fmt": {"bix": 168, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control feedback"},
+    {"id": "LEXUS_ISC_LEARN",         "path": "Engine",       "fmt": {"bix": 184, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control learning value"},
+    {"id": "LEXUS_ELEC_LOAD_FB",      "path": "Electrical",   "fmt": {"bix": 200, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Electric load feedback"},
+    {"id": "LEXUS_AC_FB",             "path": "Climate",      "fmt": {"bix": 216, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Air conditioner feedback"},
+    {"id": "LEXUS_N_RANGE_STS",       "path": "Transmission", "fmt": {"bix": 232, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral range status"},
+    {"id": "LEXUS_NEUTRAL_CTRL",      "path": "Transmission", "fmt": {"bix": 233, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral control"},
+    {"id": "LEXUS_LOW_RPM_CTRL",      "path": "Engine",       "fmt": {"bix": 234, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution control"},
+    {"id": "LEXUS_VVT_ADV_FAIL",      "path": "Engine",       "fmt": {"bix": 235, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Variable valve timing advance fail"},
+    {"id": "LEXUS_LOW_RPM_START",     "path": "Engine",       "fmt": {"bix": 236, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution for engine start"},
+    {"id": "LEXUS_ENG_START_HESIT",   "path": "Engine",       "fmt": {"bix": 237, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Engine start hesitation"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "82"}, "freq": 1,
+  "signals": [
+    {"id": "LEXUS_ATF_T_PAN", "path": "Transmission", "fmt": {           "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature, pan",              "suggestedMetric": "transmissionFluidTemperature"},
+    {"id": "LEXUS_ATF_PAN_T", "path": "Transmission", "fmt": {           "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature, pan"},
+    {"id": "LEXUS_ATF_T_TQC", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature, torque converter", "suggestedMetric": "transmissionFluidTemperature"},
+    {"id": "LEXUS_ATF_TQC_T", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature, torque converter"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "85"}, "freq": 0.4,
+  "signals": [
+    {"id": "LEXUS_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20,  "unit": "scalar" }, "name": "Gear"},
+    {"id": "LEXUS_GEAR_V2",    "path": "Transmission", "fmt": {          "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear, variant"},
+    {"id": "LEXUS_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,   "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "DA"}, "freq": 1,
   "signals": [
