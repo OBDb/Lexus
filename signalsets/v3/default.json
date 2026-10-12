@@ -157,7 +157,7 @@
   ]},
 { "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA25"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_EOT_V3", "path": "Engine", "fmt": { "len": 16, "max": 250, "min": -49, "add": -48, "sign": true, "nullmin": -49, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
+    {"id": "LEXUS_EOT_V4", "path": "Engine", "fmt": { "len": 16, "max": 250, "min": -49, "add": -48, "sign": true, "nullmin": -49, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "6F1", "rax": "618", "eax": "18", "fcm1": true, "dbg": true, "cmd": {"22": "DA28"}, "freq": 1,
   "signals": [
@@ -199,7 +199,7 @@
   "signals": [
     {"id": "LEXUS_TPMS_POS_FL", "path": "Tires", "fmt": {"bix": 32,  "len": 8,  "max": 255,                                                                         "unit": "scalar"  },               "name": "Front left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right"},
     {"id": "LEXUS_TP_FL_V3",    "path": "Tires", "fmt": {"bix": 40,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                         "name": "Front left tire pressure",                                      "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "LEXUS_TT_FL_V3",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Front left tire temperature",     "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "LEXUS_TT_FL_V4",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Front left tire temperature",     "suggestedMetric": "frontLeftTireTemperature"},
     {"id": "LEXUS_TP_SET_FL",   "path": "Tires", "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                         "name": "Front left tire pressure, set point"},
     {"id": "LEXUS_TPMS_BAT_FL", "path": "Tires", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 65535,                                                                           "unit": "scalar" },                                         "name": "Front left tire sensor battery life, months"}
   ]},
@@ -207,7 +207,7 @@
   "signals": [
     {"id": "LEXUS_TPMS_POS_FR", "path": "Tires", "fmt": {"bix": 32,  "len": 8,  "max": 255,                                                                         "unit": "scalar"  },               "name": "Front right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right"},
     {"id": "LEXUS_TP_FR_V3",    "path": "Tires", "fmt": {"bix": 40,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                          "name": "Front right tire pressure",                                     "suggestedMetric": "frontRightTirePressure"},
-    {"id": "LEXUS_TT_FR_V3",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Front right tire temperature",     "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "LEXUS_TT_FR_V4",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Front right tire temperature",     "suggestedMetric": "frontRightTireTemperature"},
     {"id": "LEXUS_TP_SET_FR",   "path": "Tires", "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                          "name": "Front right tire pressure, set point"},
     {"id": "LEXUS_TPMS_BAT_FR", "path": "Tires", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 65535,                                                                           "unit": "scalar" },                                          "name": "Front right tire sensor battery life, months"}
   ]},
@@ -215,7 +215,7 @@
   "signals": [
     {"id": "LEXUS_TPMS_POS_RL", "path": "Tires", "fmt": {"bix": 32,  "len": 8,  "max": 255,                                                                         "unit": "scalar"  },               "name": "Rear left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right"},
     {"id": "LEXUS_TP_RL_V3",    "path": "Tires", "fmt": {"bix": 40,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                        "name": "Rear left tire pressure",                                       "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "LEXUS_TT_RL_V3",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Rear left tire temperature",     "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "LEXUS_TT_RL_V4",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Rear left tire temperature",     "suggestedMetric": "rearLeftTireTemperature"},
     {"id": "LEXUS_TP_SET_RL",   "path": "Tires", "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                        "name": "Rear left tire pressure, set point"},
     {"id": "LEXUS_TPMS_BAT_RL", "path": "Tires", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 65535,                                                                           "unit": "scalar" },                                        "name": "Rear left tire sensor battery life, months"}
   ]},
@@ -223,7 +223,7 @@
   "signals": [
     {"id": "LEXUS_TPMS_POS_RR", "path": "Tires", "fmt": {"bix": 32,  "len": 8,  "max": 255,                                                                         "unit": "scalar"  },               "name": "Rear right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right"},
     {"id": "LEXUS_TP_RR_V3",    "path": "Tires", "fmt": {"bix": 40,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                         "name": "Rear right tire pressure",                                      "suggestedMetric": "rearRightTirePressure"},
-    {"id": "LEXUS_TT_RR_V3",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Rear right tire temperature",     "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "LEXUS_TT_RR_V4",    "path": "Tires", "fmt": {"bix": 56,  "len": 8,  "max": 127,   "min": -128,                              "sign": true,               "unit": "celsius" },               "name": "Rear right tire temperature",     "suggestedMetric": "rearRightTireTemperature"},
     {"id": "LEXUS_TP_SET_RR",   "path": "Tires", "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 32.76, "min": -32.76, "div": 1000,               "sign": true,                   "unit": "bars"   },                                         "name": "Rear right tire pressure, set point"},
     {"id": "LEXUS_TPMS_BAT_RR", "path": "Tires", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 65535,                                                                           "unit": "scalar" },                                         "name": "Rear right tire sensor battery life, months"}
   ]},
@@ -1076,25 +1076,25 @@
     {"id": "LEXUS_TT_FL",       "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Front left tire temperature"},
     {"id": "LEXUS_TT_FL_V2",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
     {"id": "LEXUS_TT_FL_750",   "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "LEXUS_TT_FL_V1",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Front left tire temperature"},
+    {"id": "LEXUS_TT_FL_V1",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -40, "add": -40, "nullmin": -40,                 "unit": "celsius" }, "name": "Front left tire temperature"},
     {"id": "LEXUS_TT_1",        "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -40, "add": -40,                                 "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
     {"id": "LEXUS_TT_FR",       "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Front right tire temperature"},
     {"id": "LEXUS_TT_FR_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
     {"id": "LEXUS_TT_FR_750",   "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "LEXUS_TT_FR_V1",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Front right tire temperature"},
+    {"id": "LEXUS_TT_FR_V1",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -40, "add": -40, "nullmin": -40,                 "unit": "celsius" }, "name": "Front right tire temperature"},
     {"id": "LEXUS_TT_2",        "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 150, "min": -40, "add": -40,                                 "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
     {"id": "LEXUS_TT_RL",       "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Rear left tire temperature"},
     {"id": "LEXUS_TT_RL_V2",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
     {"id": "LEXUS_TT_RL_750",   "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "LEXUS_TT_RL_V1",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Rear left tire temperature"},
+    {"id": "LEXUS_TT_RL_V1",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -40, "add": -40, "nullmin": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature"},
     {"id": "LEXUS_TT_3",        "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 150, "min": -40, "add": -40,                                 "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
     {"id": "LEXUS_TT_RR",       "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "LEXUS_TT_RR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
     {"id": "LEXUS_TT_RR_750",   "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "LEXUS_TT_RR_V1",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Rear right tire temperature"},
+    {"id": "LEXUS_TT_RR_V1",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -40, "add": -40, "nullmin": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "LEXUS_TT_4",        "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -40, "add": -40,                                 "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
     {"id": "LEXUS_TT_SPARE",    "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "nullmax": 215, "unit": "celsius" }, "name": "Spare tire temperature"},
-    {"id": "LEXUS_TT_SPARE_V1", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -20, "add": -40,                                 "unit": "celsius" }, "name": "Spare tire temperature"},
+    {"id": "LEXUS_TT_SPARE_V1", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -40, "add": -40, "nullmin": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"},
     {"id": "LEXUS_TT_5",        "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -40, "add": -40,                                 "unit": "celsius" }, "name": "Spare tire temperature"}
   ]},
 { "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"21": "30"}, "freq": 1,
@@ -1114,18 +1114,23 @@
   "signals": [
     {"id": "LEXUS_TT_FL_V2_V2", "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature"},
     {"id": "LEXUS_TT_1_V2",     "path": "Tires", "fmt": {           "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "LEXUS_TT_FL_V2",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front left tire temperature"},
     {"id": "LEXUS_TT_1_750",    "path": "Tires", "fmt": {           "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front right tire temperature"},
     {"id": "LEXUS_TT_FR_V2_V2", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature"},
     {"id": "LEXUS_TT_2_V2",     "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "LEXUS_TT_FR_V2",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Front right tire temperature"},
     {"id": "LEXUS_TT_2_750",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "LEXUS_TT_RL_V2_V2", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature"},
     {"id": "LEXUS_TT_3_V2",     "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "LEXUS_TT_RL_V2",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear left tire temperature"},
     {"id": "LEXUS_TT_3_750",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Front left tire temperature"},
     {"id": "LEXUS_TT_RR_V2_V2", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "LEXUS_TT_4_V2",     "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "LEXUS_TT_RR_V2",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "LEXUS_TT_4_750",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Rear left tire temperature"},
     {"id": "LEXUS_TT_SPARE_V2", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Spare tire temperature"},
-    {"id": "LEXUS_TT_5_V2",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"}
+    {"id": "LEXUS_TT_5_V2",     "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 100, "min": -30, "add": -40, "nullmin": -30, "unit": "celsius" }, "name": "Spare tire temperature"},
+    {"id": "LEXUS_TT_SPARE_V2", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Spare tire temperature"}
   ]},
 { "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "dbg": true, "cmd": {"22": "1005"}, "freq": 5,
   "signals": [
@@ -1865,7 +1870,8 @@
   ]},
 { "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LEXUS_ODO_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V2",    "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_V2_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1002"}, "freq": 5,
   "signals": [
@@ -2423,31 +2429,32 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "51"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_ENG_START_T",       "path": "Engine",       "fmt": {            "len": 16, "max": 655350,             "mul": 10,                            "unit": "milliseconds" }, "name": "Engine starting time"},
-    {"id": "LEXUS_ENG_SPD_START_OFF", "path": "Movement",     "fmt": {"bix": 16,  "len": 16, "max": 51199,              "mul": 100, "div": 128,               "unit": "rpm"          }, "name": "Engine speed, starter off"},
-    {"id": "LEXUS_IMMOB_FUEL_CUT",    "path": "Fuel",         "fmt": {"bix": 32,  "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Immobilizer fuel cut"},
-    {"id": "LEXUS_STARTER_CNT",       "path": "Engine",       "fmt": {"bix": 33,  "len": 7,  "max": 127,                                                      "unit": "scalar"       }, "name": "Starter count"},
-    {"id": "LEXUS_PREV_TRIP_DST",     "path": "Trips",        "fmt": {"bix": 40,  "len": 16, "max": 655.35,                         "div": 100,               "unit": "kilometers"   }, "name": "Previous trip distance"},
-    {"id": "LEXUS_VVTOT",             "path": "Engine",       "fmt": {"bix": 56,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Variable valve timing oil temperature"},
-    {"id": "LEXUS_PREV_TRIP_IAT",     "path": "Engine",       "fmt": {"bix": 64,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Intake air temperature, previous trip"},
-    {"id": "LEXUS_EOT_V1",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature"},
-    {"id": "LEXUS_EOT_V2_V2",         "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, variation 2",   "suggestedMetric": "engineOilTemperature"},
-    {"id": "LEXUS_PREV_TRIP_EOT",     "path": "Engine",       "fmt": {"bix": 80,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Engine oil temperature, previous trip", "suggestedMetric": "engineOilTemperature"},
-    {"id": "LEXUS_AC_AMB_T",          "path": "Climate",      "fmt": {"bix": 88,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature for A/C"},
-    {"id": "LEXUS_PREV_TRIP_AMB_T",   "path": "Trips",        "fmt": {"bix": 96,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "unit": "celsius"      }, "name": "Ambient temperature, previous trip"},
-    {"id": "LEXUS_TPS",               "path": "Engine",       "fmt": {"bix": 104, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Throttle position"},
-    {"id": "LEXUS_ISC_FLOW",          "path": "Engine",       "fmt": {"bix": 120, "len": 16, "max": 79.99,              "mul": 10,  "div": 8192,              "unit": "scalar"       }, "name": "Idle speed control flow"},
-    {"id": "LEXUS_ISC_POS",           "path": "Engine",       "fmt": {"bix": 136, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,             "unit": "degrees"      }, "name": "Idle speed control position"},
-    {"id": "LEXUS_ISC_FB",            "path": "Engine",       "fmt": {"bix": 168, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control feedback"},
-    {"id": "LEXUS_ISC_LEARN",         "path": "Engine",       "fmt": {"bix": 184, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Idle speed control learning value"},
-    {"id": "LEXUS_ELEC_LOAD_FB",      "path": "Electrical",   "fmt": {"bix": 200, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Electric load feedback"},
-    {"id": "LEXUS_AC_FB",             "path": "Climate",      "fmt": {"bix": 216, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40, "unit": "scalar"       }, "name": "Air conditioner feedback"},
-    {"id": "LEXUS_N_RANGE_STS",       "path": "Transmission", "fmt": {"bix": 232, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral range status"},
-    {"id": "LEXUS_NEUTRAL_CTRL",      "path": "Transmission", "fmt": {"bix": 233, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Neutral control"},
-    {"id": "LEXUS_LOW_RPM_CTRL",      "path": "Engine",       "fmt": {"bix": 234, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution control"},
-    {"id": "LEXUS_VVT_ADV_FAIL",      "path": "Engine",       "fmt": {"bix": 235, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Variable valve timing advance fail"},
-    {"id": "LEXUS_LOW_RPM_START",     "path": "Engine",       "fmt": {"bix": 236, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Low revolution for engine start"},
-    {"id": "LEXUS_ENG_START_HESIT",   "path": "Engine",       "fmt": {"bix": 237, "len": 1,  "max": 1,                                                        "unit": "offon"        }, "name": "Engine start hesitation"}
+    {"id": "LEXUS_ENG_START_T",       "path": "Engine",       "fmt": {            "len": 16, "max": 655350,             "mul": 10,                                            "unit": "milliseconds" }, "name": "Engine starting time"},
+    {"id": "LEXUS_ENG_SPD_START_OFF", "path": "Movement",     "fmt": {"bix": 16,  "len": 16, "max": 51199,              "mul": 100, "div": 128,                               "unit": "rpm"          }, "name": "Engine speed, starter off"},
+    {"id": "LEXUS_IMMOB_FUEL_CUT",    "path": "Fuel",         "fmt": {"bix": 32,  "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Immobilizer fuel cut"},
+    {"id": "LEXUS_STARTER_CNT",       "path": "Engine",       "fmt": {"bix": 33,  "len": 7,  "max": 127,                                                                      "unit": "scalar"       }, "name": "Starter count"},
+    {"id": "LEXUS_PREV_TRIP_DST",     "path": "Trips",        "fmt": {"bix": 40,  "len": 16, "max": 655.35,                         "div": 100,                               "unit": "kilometers"   }, "name": "Previous trip distance"},
+    {"id": "LEXUS_VVTOT",             "path": "Engine",       "fmt": {"bix": 56,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Variable valve timing oil temperature"},
+    {"id": "LEXUS_PREV_TRIP_IAT",     "path": "Engine",       "fmt": {"bix": 64,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Intake air temperature, previous trip"},
+    {"id": "LEXUS_EOT_V1",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Engine oil temperature"},
+    {"id": "LEXUS_EOT_V2_V2",         "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Engine oil temperature, variation 2",   "suggestedMetric": "engineOilTemperature"},
+    {"id": "LEXUS_EOT_V3",            "path": "Engine",       "fmt": {"bix": 72,  "len": 8,  "max": 215,    "min": -40,                           "add": -40, "nullmin": -40, "unit": "celsius"      }, "name": "Engine oil temperature"},
+    {"id": "LEXUS_PREV_TRIP_EOT",     "path": "Engine",       "fmt": {"bix": 80,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Engine oil temperature, previous trip", "suggestedMetric": "engineOilTemperature"},
+    {"id": "LEXUS_AC_AMB_T",          "path": "Climate",      "fmt": {"bix": 88,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Ambient temperature for A/C"},
+    {"id": "LEXUS_PREV_TRIP_AMB_T",   "path": "Trips",        "fmt": {"bix": 96,  "len": 8,  "max": 215,    "min": -40,                           "add": -40,                 "unit": "celsius"      }, "name": "Ambient temperature, previous trip"},
+    {"id": "LEXUS_TPS",               "path": "Engine",       "fmt": {"bix": 104, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,                             "unit": "degrees"      }, "name": "Throttle position"},
+    {"id": "LEXUS_ISC_FLOW",          "path": "Engine",       "fmt": {"bix": 120, "len": 16, "max": 79.99,              "mul": 10,  "div": 8192,                              "unit": "scalar"       }, "name": "Idle speed control flow"},
+    {"id": "LEXUS_ISC_POS",           "path": "Engine",       "fmt": {"bix": 136, "len": 16, "max": 499.99,             "mul": 125, "div": 16384,                             "unit": "degrees"      }, "name": "Idle speed control position"},
+    {"id": "LEXUS_ISC_FB",            "path": "Engine",       "fmt": {"bix": 168, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40,                 "unit": "scalar"       }, "name": "Idle speed control feedback"},
+    {"id": "LEXUS_ISC_LEARN",         "path": "Engine",       "fmt": {"bix": 184, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40,                 "unit": "scalar"       }, "name": "Idle speed control learning value"},
+    {"id": "LEXUS_ELEC_LOAD_FB",      "path": "Electrical",   "fmt": {"bix": 200, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40,                 "unit": "scalar"       }, "name": "Electric load feedback"},
+    {"id": "LEXUS_AC_FB",             "path": "Climate",      "fmt": {"bix": 216, "len": 16, "max": 39.99,  "min": -40, "mul": 10,  "div": 8192,  "add": -40,                 "unit": "scalar"       }, "name": "Air conditioner feedback"},
+    {"id": "LEXUS_N_RANGE_STS",       "path": "Transmission", "fmt": {"bix": 232, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Neutral range status"},
+    {"id": "LEXUS_NEUTRAL_CTRL",      "path": "Transmission", "fmt": {"bix": 233, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Neutral control"},
+    {"id": "LEXUS_LOW_RPM_CTRL",      "path": "Engine",       "fmt": {"bix": 234, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Low revolution control"},
+    {"id": "LEXUS_VVT_ADV_FAIL",      "path": "Engine",       "fmt": {"bix": 235, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Variable valve timing advance fail"},
+    {"id": "LEXUS_LOW_RPM_START",     "path": "Engine",       "fmt": {"bix": 236, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Low revolution for engine start"},
+    {"id": "LEXUS_ENG_START_HESIT",   "path": "Engine",       "fmt": {"bix": 237, "len": 1,  "max": 1,                                                                        "unit": "offon"        }, "name": "Engine start hesitation"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "52"}, "freq": 0.25,
   "signals": [
