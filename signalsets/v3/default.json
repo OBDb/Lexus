@@ -741,7 +741,7 @@
   ]},
 { "hdr": "720", "rax": "728", "dbg": true, "cmd": {"22": "61B1"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_IA_FUEL_LEVEL", "path": "Fuel", "fmt": { "len": 8, "max": 55, "unit": "liters" }, "name": "Fuel level"}
+    {"id": "LEXUS_IA_FUEL_LEVEL", "path": "Fuel", "fmt": { "len": 8, "max": 100, "unit": "percent" }, "name": "Fuel level"}
   ]},
 { "hdr": "720", "rax": "728", "dbg": true, "cmd": {"22": "DD01"}, "freq": 30,
   "signals": [
@@ -1224,7 +1224,7 @@
   ]},
 { "hdr": "760", "rax": "768", "dbg": true, "cmd": {"22": "DD01"}, "freq": 5,
   "signals": [
-    {"id": "LEXUS_IA_ODO_BCM", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer, stability control module"}
+    {"id": "LEXUS_IA_ODO_BCM", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer, stability control module"}
   ]},
 { "hdr": "780", "rax": "788", "dbg": true, "cmd": {"21": "04"}, "freq": 1,
   "signals": [
@@ -1520,7 +1520,8 @@
   "signals": [
     {"id": "LEXUS_VSS_V1",            "path": "Movement", "fmt": { "len": 8, "max": 326,    "mul": 1.28,              "unit": "kilometersPerHour" }, "name": "Vehicle speed",      "suggestedMetric": "speed", "description": "Current vehicle speed."},
     {"id": "LEXUS_VSS",               "path": "Movement", "fmt": { "len": 8, "max": 323.85, "mul": 1.35,              "unit": "kilometersPerHour" }, "name": "Vehicle speed",      "suggestedMetric": "speed", "description": "Current vehicle speed."},
-    {"id": "LEXUS_VEHICLE_SPEED_7B0", "path": "Movement", "fmt": { "len": 8, "max": 326.4,  "mul": 326.4, "div": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed, 7B0", "suggestedMetric": "speed"}
+    {"id": "LEXUS_VEHICLE_SPEED_7B0", "path": "Movement", "fmt": { "len": 8, "max": 326.4,  "mul": 326.4, "div": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed, 7B0", "suggestedMetric": "speed"},
+    {"id": "LEXUS_VSS_7B0",           "path": "Movement", "fmt": { "len": 8, "max": 323.85, "mul": 1.35,              "unit": "kilometersPerHour" }, "name": "Vehicle speed, ABS"}
   ]},
 { "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "3C"}, "freq": 1,
   "signals": [
@@ -1550,7 +1551,7 @@
     {"id": "LEXUS_ZP_DEC",      "path": "Control",     "fmt": {           "len": 8, "max": 2.54, "min": -2.56, "div": 50,              "sign": true, "unit": "gravity" }, "name": "Zero point of deceleration"},
     {"id": "LEXUS_ZP_DEC2",     "path": "Control",     "fmt": {"bix": 8,  "len": 8, "max": 2.54, "min": -2.56, "div": 50,              "sign": true, "unit": "gravity" }, "name": "Zero point of deceleration 2"},
     {"id": "LEXUS_ZP_YAW_RATE", "path": "Control",     "fmt": {"bix": 16, "len": 8, "max": 127,  "min": -128,             "add": -128,               "unit": "degrees" }, "name": "Zero point of yaw rate"},
-    {"id": "LEXUS_ZP_YAW",      "path": "Orientation", "fmt": {"bix": 16, "len": 8, "max": 127,  "min": -128,             "add": -128,               "unit": "scalar"  }, "name": "Zero point of yaw rate (degrees/sec)"}
+    {"id": "LEXUS_ZP_YAW",      "path": "Orientation", "fmt": {"bix": 16, "len": 8, "max": 127,  "min": -128,             "add": -128,               "unit": "scalar"  }, "name": "Zero point of yaw rate"}
   ]},
 { "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"21": "47"}, "freq": 0.25,
   "signals": [
@@ -1728,7 +1729,7 @@
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "29"}, "freq": 1,
   "signals": [
     {"id": "LEXUS_FLI_VOL",    "path": "Fuel", "fmt": { "len": 8, "max": 127.5, "div": 2, "unit": "liters" }, "name": "Fuel level, volume", "suggestedMetric": "fuelTankLevel"},
-    {"id": "LEXUS_FUEL_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 255,             "unit": "liters" }, "name": "Fuel input"}
+    {"id": "LEXUS_FUEL_INPUT", "path": "Fuel", "fmt": { "len": 8, "max": 255,             "unit": "liters" }, "name": "Fuel input",         "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "41"}, "freq": 5,
   "signals": [
@@ -2396,6 +2397,7 @@
     {"id": "LEXUS_CYL4_MISFIRE_CNT",          "path": "Engine.Misfires", "fmt": {"bix": 48, "len": 8,  "max": 255,                                                    "unit": "scalar"  }, "name": "Cylinder #4 misfire count"},
     {"id": "LEXUS_ALL_CYLINDERS_MISFIRE_CNT", "path": "Engine.Misfires", "fmt": {"bix": 56, "len": 8,  "max": 255,                                                    "unit": "scalar"  }, "name": "All cylinders misfire count"},
     {"id": "LEXUS_IGNITION_TRIG_CNT",         "path": "Control",         "fmt": {"bix": 64, "len": 16, "max": 65535,                                                  "unit": "scalar"  }, "name": "Ignition trigger count"},
+    {"id": "LEXUS_CYL6_MISFIRE_CNT",          "path": "Engine.Misfires", "fmt": {"bix": 64, "len": 8,  "max": 255,                                                    "unit": "scalar"  }, "name": "Cylinder #6 misfire count"},
     {"id": "LEXUS_MISFIRE_MARGIN",            "path": "Engine.Misfires", "fmt": {"bix": 80, "len": 8,  "max": 127,   "min": -128,                        "add": -128, "unit": "percent" }, "name": "Misfire margin"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "47"}, "freq": 1,
