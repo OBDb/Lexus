@@ -1716,10 +1716,11 @@
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "12"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_TAIL_CANCEL_LIGHT",       "path": "Lights", "fmt": {"bix": 2,  "len": 1, "max": 1, "unit": "offon" }, "name": "Tail cancel SW"},
-    {"id": "LEXUS_P_SEATBELT_BUCKLE_LIGHT", "path": "Lights", "fmt": {"bix": 8,  "len": 1, "max": 1, "unit": "offon" }, "name": "P-seatbelt buckle SW"},
-    {"id": "LEXUS_CHECK_ENGINE_LIGHT",      "path": "Lights", "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "offon" }, "name": "Check engine SW"},
-    {"id": "LEXUS_EOP_LIGHT",               "path": "Lights", "fmt": {"bix": 35, "len": 1, "max": 1, "unit": "offon" }, "name": "Oil pressure switch"}
+    {"id": "LEXUS_TAIL_CANCEL_LIGHT",       "path": "Lights",  "fmt": {"bix": 2,  "len": 1, "max": 1, "unit": "offon" }, "name": "Tail cancel SW"},
+    {"id": "LEXUS_P_SEATBELT_BUCKLE_LIGHT", "path": "Lights",  "fmt": {"bix": 8,  "len": 1, "max": 1, "unit": "offon" }, "name": "P-seatbelt buckle SW"},
+    {"id": "LEXUS_CHECK_ENGINE_LIGHT",      "path": "Lights",  "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "offon" }, "name": "Check engine SW"},
+    {"id": "LEXUS_CHECK_ENGINE",            "path": "Control", "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "offon" }, "name": "Check engine",         "suggestedMetric": "checkEngineLightOn"},
+    {"id": "LEXUS_EOP_LIGHT",               "path": "Lights",  "fmt": {"bix": 35, "len": 1, "max": 1, "unit": "offon" }, "name": "Oil pressure switch"}
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "13"}, "freq": 5,
   "signals": [
@@ -2128,8 +2129,11 @@
     {"id": "LEXUS_MAP_7E0",                     "path": "Engine",   "fmt": {"bix": 32,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Manifold absolute pressure"},
     {"id": "LEXUS_MAP",                         "path": "Engine",   "fmt": {"bix": 40,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Manifold absolute pressure"},
     {"id": "LEXUS_IAT",                         "path": "Engine",   "fmt": {"bix": 40,  "len": 8,  "max": 215,      "min": -40,                           "add": -40, "unit": "celsius"           }, "name": "Intake air temperature"},
+    {"id": "LEXUS_MAP_7E0_V2",                  "path": "Engine",   "fmt": {"bix": 40,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Manifold absolute pressure",        "suggestedMetric": "absoluteBoostPressure"},
     {"id": "LEXUS_INTAKE_AIR",                  "path": "Engine",   "fmt": {"bix": 48,  "len": 8,  "max": 215,      "min": -40,                           "add": -40, "unit": "celsius"           }, "name": "Intake air"},
     {"id": "LEXUS_BARO",                        "path": "Engine",   "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Barometric pressure"},
+    {"id": "LEXUS_INTAKE_AIR_7E0",              "path": "Engine",   "fmt": {"bix": 48,  "len": 8,  "max": 215,      "min": -40,                           "add": -40, "unit": "celsius"           }, "name": "Intake air temperature",            "suggestedMetric": "intakeAirTemperature"},
+    {"id": "LEXUS_ATMOSPHERE_PRESSURE_V2",      "path": "Engine",   "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Atmospheric pressure",              "suggestedMetric": "barometricPressure"},
     {"id": "LEXUS_ATMOSPHERE_PRESSURE",         "path": "Engine",   "fmt": {"bix": 56,  "len": 8,  "max": 255,                                                        "unit": "kilopascal"        }, "name": "Atmosphere pressure"},
     {"id": "LEXUS_AMBIENT_T_V2",                "path": "Engine",   "fmt": {"bix": 56,  "len": 8,  "max": 215,      "min": -40,                           "add": -40, "unit": "celsius"           }, "name": "Ambient temperature"},
     {"id": "LEXUS_ECT_7E0",                     "path": "Engine",   "fmt": {"bix": 56,  "len": 8,  "max": 215,      "min": -40,                           "add": -40, "unit": "celsius"           }, "name": "Engine coolant temperature",        "suggestedMetric": "engineCoolantTemperature"},
