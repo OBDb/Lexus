@@ -259,7 +259,13 @@
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "0103"}, "freq": 30,
   "signals": [
-    {"id": "LEXUS_ENG_ODO", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ENG_ODO",     "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ENG_ODO_RAW", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "scalar"     }, "name": "Odometer, in the cluster's unit"},
+    {"id": "LEXUS_ENG_ODO_UNIT", "path": "Trips", "name": "Odometer unit", "fmt": {"len": 8, "map": {
+          "1": { "description": "Kilometers", "value": "KM" },
+          "2": { "description": "Miles",      "value": "MI" }
+        }}
+    }
   ]},
 { "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1002"}, "freq": 5,
   "signals": [
@@ -680,7 +686,13 @@
   ]},
 { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LEXUS_ODO_V5", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V5",     "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_V5_RAW", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "scalar"     }, "name": "Odometer, in the cluster's unit"},
+    {"id": "LEXUS_ODO_V5_UNIT", "path": "Trips", "name": "Odometer unit", "fmt": {"len": 8, "map": {
+          "1": { "description": "Kilometers", "value": "KM" },
+          "2": { "description": "Miles",      "value": "MI" }
+        }}
+    }
   ]},
 { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1614"}, "freq": 0.25,
   "signals": [
@@ -878,8 +890,14 @@
   ]},
 { "hdr": "747", "rax": "74F", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LEXUS_ODO_V6", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
-    {"id": "LEXUS_ODO_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V6",  "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_RAW", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "scalar"     }, "name": "Odometer, in the cluster's unit"},
+    {"id": "LEXUS_ODO_V2",  "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_UNIT", "path": "Trips", "name": "Odometer unit", "fmt": {"len": 8, "map": {
+          "1": { "description": "Kilometers", "value": "KM" },
+          "2": { "description": "Miles",      "value": "MI" }
+        }}
+    }
   ]},
 { "hdr": "747", "rax": "74F", "dbg": true, "cmd": {"22": "106E"}, "freq": 5,
   "signals": [
@@ -1765,8 +1783,8 @@
   ]},
 { "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"22": "1021"}, "freq": 1,
   "signals": [
-    {"id": "LEXUS_BATTERY_VOLTAGE_V2",  "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "unit": "volts" }, "name": "Battery voltage"},
-    {"id": "LEXUS_BATTERY_VOLTAGE_7C0", "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "unit": "volts" }, "name": "B+ battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+    {"id": "LEXUS_BATTERY_VOLTAGE_V2",  "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "nullmin": 0, "unit": "volts" }, "name": "Battery voltage"},
+    {"id": "LEXUS_BATTERY_VOLTAGE_7C0", "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "nullmin": 0, "unit": "volts" }, "name": "B+ battery voltage", "suggestedMetric": "starterBatteryVoltage"}
   ]},
 { "hdr": "7C0", "rax": "7C8", "fcm1": true, "dbg": true, "cmd": {"22": "1022"}, "freq": 1,
   "signals": [
@@ -1875,8 +1893,14 @@
   ]},
 { "hdr": "7D2", "rax": "7DA", "fcm1": true, "dbg": true, "cmd": {"22": "0103"}, "freq": 10,
   "signals": [
-    {"id": "LEXUS_ODO_V2_V2", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
-    {"id": "LEXUS_ODO_V2",    "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "LEXUS_ODO_V2_V2",  "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_V2_RAW", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215,                      "unit": "scalar"     }, "name": "Odometer, in the cluster's unit"},
+    {"id": "LEXUS_ODO_V2",     "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer",                        "suggestedMetric": "odometer"},
+    {"id": "LEXUS_ODO_V2_UNIT", "path": "Trips", "name": "Odometer unit", "fmt": {"len": 8, "map": {
+          "1": { "description": "Kilometers", "value": "KM" },
+          "2": { "description": "Miles",      "value": "MI" }
+        }}
+    }
   ]},
 { "hdr": "7D2", "rax": "7DA", "dbg": true, "cmd": {"22": "1002"}, "freq": 5,
   "signals": [
@@ -2172,7 +2196,8 @@
     {"id": "LEXUS_TIME_AFTER_DTC_CLEARED_V3",   "path": "Engine",   "fmt": {"bix": 192, "len": 16, "max": 65535,                                                      "unit": "minutes"           }, "name": "Time after DTC cleared"},
     {"id": "LEXUS_BATTERY_VOLTAGE_7E0_V2",      "path": "Battery",  "fmt": {"bix": 192, "len": 16, "max": 65.535,                           "div": 1000,              "unit": "volts"             }, "name": "Battery voltage"},
     {"id": "LEXUS_BATTERY_VOLTAGE_V2",          "path": "Battery",  "fmt": {"bix": 200, "len": 16, "max": 65.535,                           "div": 1000,              "unit": "volts"             }, "name": "Battery voltage"},
-    {"id": "LEXUS_BATTERY_VOLTAGE_7E0",         "path": "Battery",  "fmt": {"bix": 208, "len": 16, "max": 65.535,                                                     "unit": "volts"             }, "name": "Battery voltage"},
+    {"id": "LEXUS_BATTERY_VOLTAGE_7E0",         "path": "Battery",  "fmt": {"bix": 208, "len": 16, "max": 65.535,                           "div": 1000,              "unit": "volts"             }, "name": "Battery voltage"},
+    {"id": "LEXUS_BATTERY_VOLTAGE_7E0_V3",      "path": "Battery",  "fmt": {"bix": 208, "len": 16, "max": 65.535,                                                     "unit": "volts"             }, "name": "Battery voltage"},
     {"id": "LEXUS_EOT",                         "path": "Engine",   "fmt": {"bix": 224, "len": 8,  "max": 215,                                            "add": -40, "unit": "celsius"           }, "name": "Engine oil temperature",            "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "03"}, "freq": 1,
@@ -2350,7 +2375,8 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "28"}, "freq": 5,
   "signals": [
     {"id": "LEXUS_ODO",              "path": "Trips",  "fmt": { "len": 24, "max": 16777215,   "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
-    {"id": "LEXUS_ENG_BLOCK_28_RAW", "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                      "unit": "scalar"     }, "name": "Engine computer block 28 raw value"}
+    {"id": "LEXUS_ENG_BLOCK_28_RAW", "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                      "unit": "scalar"     }, "name": "Engine computer block 28 raw value"},
+    {"id": "LEXUS_ODO_V7",           "path": "Trips",  "fmt": { "len": 24, "max": 16777215,   "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "2E"}, "freq": 1,
   "signals": [
